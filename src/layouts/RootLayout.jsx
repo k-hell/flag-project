@@ -1,5 +1,5 @@
 import { Outlet, NavLink } from 'react-router-dom';
-import logo from '/public/images/techover-logo.png';
+import logo from '/images/techover-logo.png';
 
 export default function RootLayout() {
 	return (
