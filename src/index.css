@@ -14,18 +14,24 @@ body {
 	margin: 0;
 	min-width: 320px;
 	min-height: 100vh;
-	padding: 20px;
 	background-color: var(--darkerblue);
 }
 
 header {
-	max-width: 1200px;
-	margin: 40px auto;
+	/* margin: 40px auto; */
 }
 
 .navbar {
 	display: flex;
 	justify-content: space-between;
+	background-color: var(--darkblue);
+	height: 100px;
+}
+
+.navbar p {
+	margin: auto 0;
+	margin-left: 25px;
+	font-weight: 600;
 }
 
 .nav-links {
@@ -56,4 +62,10 @@ header {
 main {
 	max-width: 1200px;
 	margin: 40px auto;
+}
+
+@media screen and (max-width: 450px) {
+	.logo {
+		display: none;
+	}
 }

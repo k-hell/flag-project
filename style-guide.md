@@ -13,7 +13,7 @@ Designerna skapades för följande bredder:
 -   [Mörkare Blå](#202C36)
 -   [Vit](#F2F2F2)
 
-[Se färgerna här](./assets/colors.png)
+[Se färgerna här](./public/design/colors.png)
 
 ### Body Copy
 

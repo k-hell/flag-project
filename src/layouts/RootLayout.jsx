@@ -6,14 +6,15 @@ export default function RootLayout() {
 		<div className="root-layout">
 			<header>
 				<nav className="navbar">
+					<p>The Flag App</p>
 					<img className="logo" src={logo} alt="Techover" />
 					<div className="nav-links">
-						<NavLink className="nav-link" to="/">
+						{/* <NavLink className="nav-link" to="/">
 							Home
-						</NavLink>
-						<NavLink className="nav-link" to="country">
+						</NavLink> */}
+						{/* <NavLink className="nav-link" to="country">
 							Country
-						</NavLink>
+						</NavLink> */}
 					</div>
 				</nav>
 			</header>
