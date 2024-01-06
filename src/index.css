@@ -64,8 +64,142 @@ main {
 	margin: 40px auto;
 }
 
+.home-page {
+	padding-bottom: 70px;
+}
+
+.searchbar {
+	height: 70px;
+	margin: 30px;
+	border-radius: 10px;
+	background-color: var(--darkblue);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 30px;
+}
+
+.filterbyregion {
+	height: 70px;
+	width: 55%;
+	margin: 30px;
+	border-radius: 10px;
+	background-color: var(--darkblue);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 30px;
+}
+
+.country-card {
+	max-width: 300px;
+	margin: 0 auto;
+	background-color: var(--darkblue);
+	border-radius: 10px;
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+.flag {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.country-info {
+	padding: 15px 0 15px 25px;
+}
+
+.country-name {
+	font-weight: 600;
+}
+
+.country-population {
+	margin-top: 5px;
+	padding: 5px 0;
+}
+
+.country-region {
+	padding: 5px 0;
+}
+
+.country-capital {
+	padding: 5px 0;
+}
+
 @media screen and (max-width: 450px) {
 	.logo {
 		display: none;
+	}
+
+	.home-page {
+		padding-bottom: 70px;
+	}
+
+	.searchbar {
+		height: 70px;
+		margin: 30px;
+		border-radius: 10px;
+		background-color: var(--darkblue);
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 30px;
+	}
+
+	.filterbyregion {
+		height: 70px;
+		width: 55%;
+		margin: 30px;
+		border-radius: 10px;
+		background-color: var(--darkblue);
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 30px;
+	}
+
+	.country-card {
+		max-width: 300px;
+		margin: 0 auto;
+		background-color: var(--darkblue);
+		border-radius: 10px;
+		overflow: hidden;
+		margin-bottom: 30px;
+	}
+
+	.flag {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.country-info {
+		padding: 15px 0 15px 25px;
+	}
+
+	.country-name {
+		font-weight: 600;
+	}
+
+	.country-population {
+		margin-top: 5px;
+		padding: 5px 0;
+	}
+
+	.country-region {
+		padding: 5px 0;
+	}
+
+	.country-capital {
+		padding: 5px 0;
 	}
 }
