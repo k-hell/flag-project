@@ -1,22 +1,12 @@
-import { Outlet, NavLink } from 'react-router-dom';
-import logo from '/public/images/techover-logo.png';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 export default function RootLayout() {
 	return (
 		<div className="root-layout">
 			<header>
-				<nav className="navbar">
-					<p>The Flag App</p>
-					<img className="logo" src={logo} alt="Techover" />
-					<div className="nav-links">
-						{/* <NavLink className="nav-link" to="/">
-							Home
-						</NavLink> */}
-						{/* <NavLink className="nav-link" to="country">
-							Country
-						</NavLink> */}
-					</div>
-				</nav>
+				<Navbar />
 			</header>
 			<main>
 				<Outlet />

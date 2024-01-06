@@ -38,7 +38,11 @@ header {
 	display: flex;
 	gap: 16px;
 	justify-content: end;
+	align-items: center;
 	max-width: 1200px;
+	height: 30px;
+	margin: auto 0;
+	margin-right: 25px;
 }
 
 .nav-link {
@@ -66,6 +70,9 @@ main {
 
 .home-page {
 	padding-bottom: 70px;
+	/* display: flex; */
+	/* flex-wrap: wrap; */
+	/* gap: 16px; */
 }
 
 .searchbar {
@@ -133,6 +140,10 @@ main {
 
 @media screen and (max-width: 450px) {
 	.logo {
+		display: none;
+	}
+
+	.nav-link {
 		display: none;
 	}
 
