@@ -1,6 +1,12 @@
+:root {
+	--darkblue: #2b3844;
+	--darkerblue: #202c36;
+	--white: #f2f2f2;
+}
+
 * {
 	box-sizing: border-box;
-	color: white;
+	color: var(--white);
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -9,7 +15,7 @@ body {
 	min-width: 320px;
 	min-height: 100vh;
 	padding: 20px;
-	background-color: #1d1d1d;
+	background-color: var(--darkerblue);
 }
 
 header {
@@ -33,12 +39,13 @@ header {
 	text-decoration: none;
 	padding: 6px;
 	border-radius: 4px;
-	background: #2d2d2d;
+	background: var(--darkblue);
+	color: var(--white);
 }
 
 .nav-link.active {
-	background: #f0fafa;
-	color: #2d2d2d;
+	background: var(--white);
+	color: var(--darkblue);
 }
 
 .logo {
