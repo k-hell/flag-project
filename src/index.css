@@ -135,19 +135,19 @@ main {
 
 .country-name {
 	font-weight: 600;
+	margin-bottom: 5px;
 }
 
-.country-population {
-	margin-top: 5px;
-	padding: 5px 0;
-}
-
-.country-region {
-	padding: 5px 0;
-}
-
+.country-population,
+.country-region,
 .country-capital {
 	padding: 5px 0;
+}
+
+.population-title,
+.region-title,
+.capital-title {
+	font-weight: 600;
 }
 
 @media screen and (max-width: 1259px) {
