@@ -64,15 +64,12 @@ header {
 }
 
 main {
-	max-width: 1200px;
+	max-width: 1440px;
 	margin: 40px auto;
 }
 
 .home-page {
 	padding-bottom: 70px;
-	/* display: flex; */
-	/* flex-wrap: wrap; */
-	/* gap: 16px; */
 }
 
 .searchbar {
@@ -98,13 +95,18 @@ main {
 	padding: 30px;
 }
 
+.countries-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
 .country-card {
 	max-width: 300px;
 	margin: 0 auto;
 	background-color: var(--darkblue);
 	border-radius: 10px;
 	overflow: hidden;
-	margin-bottom: 30px;
 }
 
 .flag {
@@ -174,13 +176,16 @@ main {
 		padding: 30px;
 	}
 
+	.countries-container {
+		/* display: block; */
+	}
+
 	.country-card {
 		max-width: 300px;
 		margin: 0 auto;
 		background-color: var(--darkblue);
 		border-radius: 10px;
 		overflow: hidden;
-		margin-bottom: 30px;
 	}
 
 	.flag {
