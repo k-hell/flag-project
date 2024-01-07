@@ -111,7 +111,7 @@ main {
 	background-color: var(--darkblue);
 	width: 200px;
 	z-index: 1;
-	top: 60px;
+	top: 65px;
 	left: 0;
 	border-radius: 10px;
 	border: 1px solid hsla(0, 0%, 100%, 0.075);
@@ -230,5 +230,9 @@ main {
 		height: 70px;
 		margin-left: 12.5px;
 		margin-right: auto;
+	}
+
+	.dropdown-content {
+		top: 75px;
 	}
 }
