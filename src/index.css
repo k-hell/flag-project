@@ -102,6 +102,43 @@ main {
 	justify-content: flex-start;
 	align-items: center;
 	padding: 30px;
+	position: relative;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: var(--darkblue);
+	width: 200px;
+	z-index: 1;
+	top: 60px;
+	left: 0;
+	border-radius: 10px;
+	border: 1px solid hsla(0, 0%, 100%, 0.075);
+}
+
+.dropdown-content a {
+	display: block;
+	text-decoration: none;
+	padding: 15px 30px;
+}
+
+.dropdown-content a:hover {
+	background-color: var(--darkerblue);
+}
+
+.dropdown-content a:first-child:hover {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.dropdown-content a:last-child:hover {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.filterdropdown:hover .dropdown-content {
+	display: block;
 }
 
 .countries-container {
