@@ -72,9 +72,16 @@ main {
 	padding-bottom: 70px;
 }
 
+.country-search-container {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto 20px;
+	max-width: 1260px;
+}
+
 .searchbar {
-	height: 70px;
-	margin: 30px;
+	height: 50px;
+	width: 470px;
 	border-radius: 10px;
 	background-color: var(--darkblue);
 	display: flex;
@@ -84,9 +91,8 @@ main {
 }
 
 .filterdropdown {
-	height: 70px;
-	width: 55%;
-	margin: 30px;
+	height: 50px;
+	width: 200px;
 	border-radius: 10px;
 	background-color: var(--darkblue);
 	display: flex;
@@ -141,7 +147,22 @@ main {
 	padding: 5px 0;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 1259px) {
+	.country-search-container {
+		max-width: 940px;
+	}
+}
+
+@media screen and (max-width: 939px) {
+	.country-search-container {
+		max-width: 620px;
+	}
+	.searchbar {
+		width: 250px;
+	}
+}
+
+@media screen and (max-width: 659px) {
 	.logo {
 		display: none;
 	}
@@ -152,5 +173,22 @@ main {
 
 	main {
 		max-width: 375px;
+	}
+
+	.country-search-container {
+		flex-direction: column;
+		gap: 25px;
+	}
+
+	.searchbar {
+		height: 70px;
+		width: 350px;
+		margin: 0 auto;
+	}
+
+	.filterdropdown {
+		height: 70px;
+		margin-left: 12.5px;
+		margin-right: auto;
 	}
 }
