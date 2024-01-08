@@ -6,7 +6,7 @@ export default function HomePage() {
 		<div className="home-page">
 			<div className="country-search-container">
 				<div className="searchbar">Search for a country...</div>
-				<div className="filterdropdown dropdown dropbtn">
+				<div className="filterdropdown">
 					Filter by Region
 					<div className="dropdown-content">
 						<a href="#">America</a>
