@@ -111,7 +111,7 @@ main {
 	background-color: var(--darkblue);
 	width: 200px;
 	z-index: 1;
-	top: 65px;
+	top: 60px;
 	left: 0;
 	border-radius: 10px;
 	border: 1px solid hsla(0, 0%, 100%, 0.075);
