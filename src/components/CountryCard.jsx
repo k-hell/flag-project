@@ -1,8 +1,10 @@
 import React from 'react';
 import data from '../assets/data.json';
 
-const CountryCard = ({ selectedRegion }) => {
-	const filteredData = selectedRegion ? data.filter((country) => country.region === selectedRegion) : data;
+const CountryCard = ({ selectedRegion, filterFunction }) => {
+	const filteredData = data
+		.filter((country) => !selectedRegion || country.region === selectedRegion)
+		.filter(filterFunction);
 
 	return (
 		<div className="countries-container">
