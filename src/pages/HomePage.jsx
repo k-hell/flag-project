@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CountryCard from '../components/CountryCard';
 import Dropdown from '../components/Dropdown';
+import SearchBar from '../components/SearchBar';
 
 export default function HomePage() {
 	const [selectedRegion, setSelectedRegion] = useState(null);
@@ -27,13 +28,7 @@ export default function HomePage() {
 	return (
 		<div className="home-page">
 			<div className="country-search-container">
-				<input
-					text="text"
-					placeholder="Search for a country..."
-					value={searchQuery}
-					onChange={handleSearchChange}
-					className="searchbar"
-				/>
+				<SearchBar value={searchQuery} onChange={handleSearchChange} />
 				<Dropdown handleRegionChange={handleRegionChange} />
 			</div>
 			<CountryCard selectedRegion={selectedRegion} filterFunction={filterCountries} />
