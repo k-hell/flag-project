@@ -149,6 +149,13 @@ main {
 	justify-content: center;
 }
 
+.country-card-loading {
+	width: 300px;
+	height: 310px;
+	background-color: var(--darkblue);
+	border-radius: 10px;
+}
+
 .country-card {
 	max-width: 300px;
 	background-color: var(--darkblue);
