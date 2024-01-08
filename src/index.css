@@ -243,4 +243,8 @@ main {
 	.dropdown-content {
 		top: 75px;
 	}
+
+	.country-card-loading {
+		height: 353px;
+	}
 }
