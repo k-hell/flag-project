@@ -24,6 +24,7 @@ header {
 .navbar {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	background-color: var(--darkblue);
 	height: 100px;
 	position: fixed;
@@ -31,10 +32,14 @@ header {
 	width: 100%;
 }
 
-.navbar p {
-	margin: auto 0;
+.homepage {
+	text-decoration: none;
 	margin-left: 25px;
 	font-weight: 600;
+}
+
+.navbar p {
+	margin: 0;
 }
 
 .nav-links {
