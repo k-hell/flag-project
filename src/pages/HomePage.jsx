@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CountryCard from '../components/CountryCard';
 
 export default function HomePage() {
+	const [selectedRegion, setSelectedRegion] = useState(null);
+
+	const handleRegionChange = (region) => {
+		setSelectedRegion(region);
+	};
+
 	return (
 		<div className="home-page">
 			<div className="country-search-container">
@@ -9,15 +15,28 @@ export default function HomePage() {
 				<div className="filterdropdown">
 					Filter by Region
 					<div className="dropdown-content">
-						<a href="#">America</a>
-						<a href="#">Asia</a>
-						<a href="#">Europe</a>
-						<a href="#">Africa</a>
-						<a href="#">Oceania</a>
+						<a href="#" onClick={() => handleRegionChange(null)}>
+							All
+						</a>
+						<a href="#" onClick={() => handleRegionChange('Americas')}>
+							Americas
+						</a>
+						<a href="#" onClick={() => handleRegionChange('Asia')}>
+							Asia
+						</a>
+						<a href="#" onClick={() => handleRegionChange('Europe')}>
+							Europe
+						</a>
+						<a href="#" onClick={() => handleRegionChange('Africa')}>
+							Africa
+						</a>
+						<a href="#" onClick={() => handleRegionChange('Oceania')}>
+							Oceania
+						</a>
 					</div>
 				</div>
 			</div>
-			<CountryCard />
+			<CountryCard selectedRegion={selectedRegion} />
 		</div>
 	);
 }

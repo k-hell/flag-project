@@ -1,20 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import data from '../assets/data.json';
 
-const CountryCard = () => {
-	const [selectedFilterEnabled, setSelectedFilterEnabled] = useState(false);
-
-	const countryOrder = ['Sweden', 'France', 'Spain', 'Portugal'];
-
-	const selectedCountries = selectedFilterEnabled
-		? data
-				.filter((country) => countryOrder.includes(country.name))
-				.sort((a, b) => countryOrder.indexOf(a.name) - countryOrder.indexOf(b.name))
-		: data;
+const CountryCard = ({ selectedRegion }) => {
+	const filteredData = selectedRegion ? data.filter((country) => country.region === selectedRegion) : data;
 
 	return (
 		<div className="countries-container">
-			{selectedCountries.map((country) => (
+			{filteredData.map((country) => (
 				<div className="country-card" key={country.name}>
 					<div className="flag">
 						<img src={country.flags.png} alt="flag" />
