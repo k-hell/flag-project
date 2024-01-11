@@ -4,35 +4,48 @@ export default function CountryPage() {
 	const countries = useLoaderData();
 
 	return (
-		<div className="country-page">
+		<>
 			{countries.map((country) => {
 				const countriesCurrency = Object.keys(country.currencies);
 				const countriesNative = Object.keys(country.name.nativeName);
 				const countriesLanguages = Object.keys(country.languages);
 				return (
-					<div>
-						<h1 key={country.name.common}>{country.name.common}</h1>
-						<p>Population: {country.population.toLocaleString()}</p>
-						<p>Region: {country.region}</p>
-						<p>Capital: {country.capital}</p>
-						<p>Native name: {country.name.nativeName[countriesNative[0]].common}</p>
-						<p>Top level domain: {country.tld}</p>
-						<p>Currencies: {country.currencies[countriesCurrency[0]].name}</p>
-						<p>Languages: {country.languages[countriesLanguages[0]]}</p>
-						{Array.isArray(country.borders) ? (
-							<div>
-								<p>Border countries:</p>
-								{country.borders.map((borderCountry, index) => (
-									<p key={index}>{borderCountry}</p>
-								))}
+					<div key={country.name.common} className="country-page">
+						<div className="country-page-flag">
+							<img src={country.flags.png} alt={country.name.common} />
+						</div>
+						<div className="country-page-container">
+							<h1>{country.name.common}</h1>
+							<div className="country-page-context-container">
+								<div>
+									<p>Population: {country.population.toLocaleString()}</p>
+									<p>Region: {country.region}</p>
+									<p>Capital: {country.capital}</p>
+									<p>Native name: {country.name.nativeName[countriesNative[0]].common}</p>
+								</div>
+								<div>
+									<p>Top level domain: {country.tld}</p>
+									<p>Currencies: {country.currencies[countriesCurrency[0]].name}</p>
+									<p>Languages: {country.languages[countriesLanguages[0]]}</p>
+								</div>
 							</div>
-						) : (
-							''
-						)}
+							{Array.isArray(country.borders) ? (
+								<div className="border-country-container">
+									Border countries:
+									{country.borders.map((borderCountry) => (
+										<div className="border-country" key={borderCountry}>
+											{borderCountry}
+										</div>
+									))}
+								</div>
+							) : (
+								''
+							)}
+						</div>
 					</div>
 				);
 			})}
-		</div>
+		</>
 	);
 }
 

@@ -7,10 +7,11 @@ const CountryCard = ({ selectedRegion, filterFunction }) => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
+		const timer = Math.floor(Math.random() * 300) + 200;
 		setTimeout(() => {
 			setCountries(data);
 			setLoading(false);
-		}, 2000); // Only temporary, remove later
+		}, timer); // Only temporary, remove later
 	}, []);
 
 	const filteredData = data
@@ -24,7 +25,7 @@ const CountryCard = ({ selectedRegion, filterFunction }) => {
 						<div className="country-card-loading" key={loadingIndex}></div>
 				  ))
 				: filteredData.map((country) => (
-						<Link style={{ textDecoration: 'none' }} to={`country/${country.name}`}>
+						<Link to={`country/${country.name}`} key={country.name}>
 							<div className="country-card" key={country.name}>
 								<div className="flag">
 									<img src={country.flags.png} alt="flag" />
