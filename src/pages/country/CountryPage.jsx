@@ -1,10 +1,11 @@
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 export default function CountryPage() {
 	const countries = useLoaderData();
 
 	return (
 		<>
+			<Link to="/">⬅ Back</Link>
 			{countries.map((country) => {
 				const countriesCurrency = Object.keys(country.currencies);
 				const countriesNative = Object.keys(country.name.nativeName);
