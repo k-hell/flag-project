@@ -25,7 +25,7 @@ const CountryCard = ({ selectedRegion, filterFunction }) => {
 						<div className="country-card-loading" key={loadingIndex}></div>
 				  ))
 				: filteredData.map((country) => (
-						<Link to={`country/${country.name}`} key={country.name}>
+						<Link to={`${country.name}`} key={country.name}>
 							<div className="country-card" key={country.name}>
 								<div className="flag">
 									<img src={country.flags.png} alt="flag" />

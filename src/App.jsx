@@ -6,9 +6,9 @@ import RootLayout from './layouts/RootLayout';
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<RootLayout />}>
-			<Route index element={<HomePage />} />
+			<Route index element={<HomePage />} /> {/* all countries loader missing */}
 			{/* <Route path="country" element={<CountriesLayout />}> */} {/* Error handling when entering /country/ */}
-			<Route path="country/:countryName" element={<CountryPage />} loader={countriesLoader} />
+			<Route path=":countryName" element={<CountryPage />} loader={countriesLoader} />
 		</Route>
 	)
 );
