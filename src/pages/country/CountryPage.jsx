@@ -12,7 +12,7 @@ export default function CountryPage() {
 				return (
 					<div>
 						<h1 key={country.name.common}>{country.name.common}</h1>
-						<p>Population: {country.population}</p>
+						<p>Population: {country.population.toLocaleString()}</p>
 						<p>Region: {country.region}</p>
 						<p>Capital: {country.capital}</p>
 						<p>Native name: {country.name.nativeName[countriesNative[0]].common}</p>
