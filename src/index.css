@@ -76,6 +76,10 @@ main {
 	margin: 40px auto;
 }
 
+main a {
+	text-decoration: none;
+}
+
 .home-page {
 	padding-bottom: 70px;
 }
@@ -154,10 +158,6 @@ main {
 	justify-content: center;
 }
 
-.countries-container a {
-	text-decoration: none;
-}
-
 .country-card-loading {
 	width: 300px;
 	height: 310px;
@@ -202,10 +202,6 @@ main {
 .region-title,
 .capital-title {
 	font-weight: 600;
-}
-
-.countries-layout a {
-	text-decoration: none;
 }
 
 .country-page {
