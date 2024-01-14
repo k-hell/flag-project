@@ -49,7 +49,7 @@ const CountryCard = ({ allCountries, selectedRegion, filterFunction }) => {
 											Population:
 										</span>
 										<span className="population-value text-darker-blue dark:text-to-white">
-											{` ${country.population}`}
+											{` ${country.population.toLocaleString()}`}
 										</span>
 									</div>
 									<div className="country-region py-[5px]">
