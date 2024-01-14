@@ -4,11 +4,11 @@ export default {
 	darkMode: 'class',
 	theme: {
 		extend: {
-			// colors: {
-			// darkblue: '#2b3844',
-			// darkerblue: '#202c36',
-			// white: '#f2f2f2'
-			// }
+			colors: {
+				'primary': '#2b3844',	// darkblue
+				'secondary': '#202c36',	// darkerblue
+				'tertiary': '#f2f2f2'	// white
+			}
 		}
 	},
 	plugins: []

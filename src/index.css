@@ -30,7 +30,10 @@
 }
 
 @media screen and (max-width: 659px) {
-	.logo {
+	.darkLogo {
+		display: none;
+	}
+	.lightLogo {
 		display: none;
 	}
 
