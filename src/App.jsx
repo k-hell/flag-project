@@ -1,5 +1,5 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+import HomePage, { allCountriesLoader } from './pages/HomePage';
 import CountryPage, { countriesLoader } from './pages/CountryPage';
 import RootLayout from './layouts/RootLayout';
 import { ThemeProvider } from './contexts/theme';
@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<RootLayout />}>
-			<Route index element={<HomePage />} /> {/* all countries loader missing */}
+			<Route index element={<HomePage />} loader={allCountriesLoader} />
 			<Route path=":countryName" element={<CountryPage />} loader={countriesLoader} />
 		</Route>
 	)

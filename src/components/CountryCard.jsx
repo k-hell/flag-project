@@ -2,19 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import data from '../assets/data.json';
 
-const CountryCard = ({ selectedRegion, filterFunction }) => {
+const CountryCard = ({ allCountries, selectedRegion, filterFunction }) => {
 	const [countries, setCountries] = useState([]);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const timer = Math.floor(Math.random() * 300) + 200;
 		setTimeout(() => {
-			setCountries(data);
+			setCountries(allCountries);
 			setLoading(false);
 		}, timer); // Only temporary, remove later
 	}, []);
 
-	const filteredData = data
+	const filteredData = allCountries
 		.filter((country) => !selectedRegion || country.region === selectedRegion)
 		.filter(filterFunction);
 
@@ -28,10 +28,10 @@ const CountryCard = ({ selectedRegion, filterFunction }) => {
 						></div>
 				  ))
 				: filteredData.map((country) => (
-						<Link to={`${country.name}`} key={country.name}>
+						<Link to={`${country.name.common}`} key={country.name.common}>
 							<div
 								className="country-card bg-white max-w-[300px] rounded-xl overflow-hidden dark:bg-dark-blue"
-								key={country.name}
+								key={country.name.common}
 							>
 								<div className="flag h-[200px]">
 									<img
@@ -42,7 +42,7 @@ const CountryCard = ({ selectedRegion, filterFunction }) => {
 								</div>
 								<div className="country-info py-[15px] pl-[25px]">
 									<div className="country-name font-semibold mb-[5px] text-darker-blue dark:text-to-white">
-										{country.name}
+										{country.name.common}
 									</div>
 									<div className="country-population py-[5px]">
 										<span className="population-title font-semibold text-darker-blue dark:text-to-white">
