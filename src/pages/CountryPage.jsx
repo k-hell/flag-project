@@ -5,7 +5,7 @@ export default function CountryPage() {
 
 	return (
 		<>
-			<Link className="no-underline text-darker-blue dark:text-[#f2f2f2]" to="/">
+			<Link className="no-underline text-darker-blue dark:text-to-white" to="/">
 				⬅ Back
 			</Link>
 			{countries.map((country) => {
@@ -22,38 +22,38 @@ export default function CountryPage() {
 							/>
 						</div>
 						<div className="country-page-container flex flex-col">
-							<h1 className="text-3xl text-darker-blue font-semibold my-3 dark:text-[#f2f2f2]">
+							<h1 className="text-3xl text-darker-blue font-semibold my-3 dark:text-to-white">
 								{country.name.common}
 							</h1>
 							<div className="country-page-context-container flex justify-between gap-[200px]">
 								<div>
-									<p className="text-darker-blue dark:text-[#f2f2f2]">
+									<p className="text-darker-blue dark:text-to-white">
 										Population: {country.population.toLocaleString()}
 									</p>
-									<p className="text-darker-blue dark:text-[#f2f2f2]">Region: {country.region}</p>
-									<p className="text-darker-blue dark:text-[#f2f2f2]">Capital: {country.capital}</p>
-									<p className="text-darker-blue dark:text-[#f2f2f2]">
+									<p className="text-darker-blue dark:text-to-white">Region: {country.region}</p>
+									<p className="text-darker-blue dark:text-to-white">Capital: {country.capital}</p>
+									<p className="text-darker-blue dark:text-to-white">
 										Native name: {country.name.nativeName[countriesNative[0]].common}
 									</p>
 								</div>
 								<div>
-									<p className="text-darker-blue dark:text-[#f2f2f2]">
+									<p className="text-darker-blue dark:text-to-white">
 										Top level domain: {country.tld}
 									</p>
-									<p className="text-darker-blue dark:text-[#f2f2f2]">
+									<p className="text-darker-blue dark:text-to-white">
 										Currencies: {country.currencies[countriesCurrency[0]].name}
 									</p>
-									<p className="text-darker-blue dark:text-[#f2f2f2]">
+									<p className="text-darker-blue dark:text-to-white">
 										Languages: {country.languages[countriesLanguages[0]]}
 									</p>
 								</div>
 							</div>
 							{Array.isArray(country.borders) ? (
-								<div className="border-country-container mt-[30px] text-darker-blue dark:text-[#f2f2f2]">
+								<div className="border-country-container mt-[30px] text-darker-blue dark:text-to-white">
 									Border countries:
 									{country.borders.map((borderCountry) => (
 										<div
-											className="border-country inline-block bg-white text-[#2b3844] py-[5px] px-5 rounded-[5px] ml-2.5 dark:bg-[#2b3844] dark:text-[#f2f2f2]"
+											className="border-country inline-block bg-white text-[#2b3844] py-[5px] px-5 rounded-[5px] ml-2.5 dark:bg-[#2b3844] dark:text-to-white"
 											key={borderCountry}
 										>
 											{borderCountry}

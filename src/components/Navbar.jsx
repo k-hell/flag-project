@@ -11,7 +11,7 @@ function Navbar() {
 	return (
 		<nav className="navbar flex justify-between items-center bg-white h-[100px] fixed top-0 w-full dark:bg-[#2b3844]">
 			<NavLink
-				className="homepage no-underline text-darker-blue ml-[25px] font-semibold dark:text-[#f2f2f2]"
+				className="homepage no-underline text-darker-blue ml-[25px] font-semibold dark:text-to-white"
 				to="/"
 			>
 				The Flag App

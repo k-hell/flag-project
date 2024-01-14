@@ -41,30 +41,30 @@ const CountryCard = ({ selectedRegion, filterFunction }) => {
 									/>
 								</div>
 								<div className="country-info py-[15px] pl-[25px]">
-									<div className="country-name font-semibold mb-[5px] text-darker-blue dark:text-[#f2f2f2]">
+									<div className="country-name font-semibold mb-[5px] text-darker-blue dark:text-to-white">
 										{country.name}
 									</div>
 									<div className="country-population py-[5px]">
-										<span className="population-title font-semibold text-darker-blue dark:text-[#f2f2f2]">
+										<span className="population-title font-semibold text-darker-blue dark:text-to-white">
 											Population:
 										</span>
-										<span className="population-value text-darker-blue dark:text-[#f2f2f2]">
+										<span className="population-value text-darker-blue dark:text-to-white">
 											{` ${country.population}`}
 										</span>
 									</div>
 									<div className="country-region py-[5px]">
-										<span className="region-title font-semibold text-darker-blue dark:text-[#f2f2f2]">
+										<span className="region-title font-semibold text-darker-blue dark:text-to-white">
 											Region:
 										</span>
-										<span className="region-value text-darker-blue dark:text-[#f2f2f2]">
+										<span className="region-value text-darker-blue dark:text-to-white">
 											{` ${country.region}`}
 										</span>
 									</div>
 									<div className="country-capital py-[5px]">
-										<span className="capital-title font-semibold text-darker-blue dark:text-[#f2f2f2]">
+										<span className="capital-title font-semibold text-darker-blue dark:text-to-white">
 											Capital:
 										</span>
-										<span className="capital-value text-darker-blue dark:text-[#f2f2f2]">
+										<span className="capital-value text-darker-blue dark:text-to-white">
 											{` ${country.capital}`}
 										</span>
 									</div>
