@@ -15,7 +15,7 @@ const router = createBrowserRouter(
 );
 
 function App() {
-	const [themeMode, setThemeMode] = useState('light');
+	const [themeMode, setThemeMode] = useState(import.meta.env.MODE === 'development' ? 'dark' : 'light');
 
 	const darkTheme = () => {
 		setThemeMode('dark');
