@@ -16,7 +16,8 @@ const CountryCard = ({ allCountries, selectedRegion, filterFunction }) => {
 
 	const filteredData = allCountries
 		.filter((country) => !selectedRegion || country.region === selectedRegion)
-		.filter(filterFunction);
+		.filter(filterFunction)
+		.sort((a, b) => a.name.common.localeCompare(b.name.common));
 
 	return (
 		<div className="countries-container flex flex-wrap gap-5 justify-center">
