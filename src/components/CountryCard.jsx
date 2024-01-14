@@ -19,30 +19,54 @@ const CountryCard = ({ selectedRegion, filterFunction }) => {
 		.filter(filterFunction);
 
 	return (
-		<div className="countries-container">
+		<div className="countries-container flex flex-wrap gap-5 justify-center">
 			{loading
 				? [1, 2, 3, 4, 5, 6, 7, 8].map((loadingIndex) => (
-						<div className="country-card-loading" key={loadingIndex}></div>
+						<div
+							className="country-card-loading bg-white w-[300px] h-[310px] rounded-xl dark:bg-[#2b3844]"
+							key={loadingIndex}
+						></div>
 				  ))
 				: filteredData.map((country) => (
 						<Link to={`${country.name}`} key={country.name}>
-							<div className="country-card" key={country.name}>
-								<div className="flag">
-									<img src={country.flags.png} alt="flag" />
+							<div
+								className="country-card bg-white max-w-[300px] rounded-xl overflow-hidden dark:bg-[#2b3844]"
+								key={country.name}
+							>
+								<div className="flag h-[200px]">
+									<img
+										className="h-full min-h-[200px] w-full min-w-[300px]"
+										src={country.flags.png}
+										alt="flag"
+									/>
 								</div>
-								<div className="country-info">
-									<div className="country-name">{country.name}</div>
-									<div className="country-population">
-										<span className="population-title">Population: </span>
-										<span className="population-value">{country.population}</span>
+								<div className="country-info py-[15px] pl-[25px]">
+									<div className="country-name font-semibold mb-[5px] text-[#202c36] dark:text-[#f2f2f2]">
+										{country.name}
 									</div>
-									<div className="country-region">
-										<span className="region-title">Region: </span>
-										<span className="region-value">{country.region}</span>
+									<div className="country-population py-[5px]">
+										<span className="population-title font-semibold text-[#202c36] dark:text-[#f2f2f2]">
+											Population:
+										</span>
+										<span className="population-value text-[#202c36] dark:text-[#f2f2f2]">
+											{` ${country.population}`}
+										</span>
 									</div>
-									<div className="country-capital">
-										<span className="capital-title">Capital: </span>
-										<span className="capital-value">{country.capital}</span>
+									<div className="country-region py-[5px]">
+										<span className="region-title font-semibold text-[#202c36] dark:text-[#f2f2f2]">
+											Region:
+										</span>
+										<span className="region-value text-[#202c36] dark:text-[#f2f2f2]">
+											{` ${country.region}`}
+										</span>
+									</div>
+									<div className="country-capital py-[5px]">
+										<span className="capital-title font-semibold text-[#202c36] dark:text-[#f2f2f2]">
+											Capital:
+										</span>
+										<span className="capital-value text-[#202c36] dark:text-[#f2f2f2]">
+											{` ${country.capital}`}
+										</span>
 									</div>
 								</div>
 							</div>

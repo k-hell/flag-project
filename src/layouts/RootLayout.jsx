@@ -5,10 +5,10 @@ import Navbar from '../components/Navbar';
 export default function RootLayout() {
 	return (
 		<div className="root-layout">
-			<header>
+			<header className="h-[100px]">
 				<Navbar />
 			</header>
-			<main>
+			<main className="max-w-[1440px] my-10 m-auto">
 				<Outlet />
 			</main>
 		</div>

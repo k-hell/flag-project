@@ -27,13 +27,13 @@ export default function HomePage() {
 	};
 
 	return (
-		<div className="home-page">
+		<div className="home-page pb-[70px]">
 			{/* temporary - remove later - start */}
 			<div className="flex justify-center m-6">
 				<Card />
 			</div>
 			{/* temporary - remove later - end */}
-			<div className="country-search-container">
+			<div className="country-search-container flex justify-between m-auto mt-0 mb-5 max-w-[1260px]">
 				<SearchBar value={searchQuery} onChange={handleSearchChange} />
 				<Dropdown handleRegionChange={handleRegionChange} />
 			</div>
