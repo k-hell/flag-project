@@ -23,7 +23,7 @@ const CountryCard = ({ selectedRegion, filterFunction }) => {
 			{loading
 				? [1, 2, 3, 4, 5, 6, 7, 8].map((loadingIndex) => (
 						<div
-							className="country-card-loading bg-white w-[300px] h-[310px] rounded-xl dark:bg-dark-blue"
+							className="country-card-loading bg-white w-[300px] h-[310px] rounded-xl dark:bg-dark-blue 3card:h-[361px]"
 							key={loadingIndex}
 						></div>
 				  ))

@@ -8,7 +8,7 @@ export default function RootLayout() {
 			<header className="h-[100px]">
 				<Navbar />
 			</header>
-			<main className="max-w-[1440px] my-10 m-auto">
+			<main className="max-w-[1440px] my-10 m-auto 1card:max-w-[375px]">
 				<Outlet />
 			</main>
 		</div>

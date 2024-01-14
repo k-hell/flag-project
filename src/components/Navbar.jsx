@@ -18,9 +18,9 @@ function Navbar() {
 			</NavLink>
 			<div>
 				{themeMode === 'light' ? (
-					<img className="darkLogo" src={darkLogo} alt="Techover" />
+					<img className="darkLogo 1card:hidden" src={darkLogo} alt="Techover" />
 				) : (
-					<img className="lightLogo" src={lightLogo} alt="Techover" />
+					<img className="lightLogo 1card:hidden" src={lightLogo} alt="Techover" />
 				)}
 			</div>
 			<div className="nav-links flex gap-4 justify-end items-center max-w-[1200px] h-[30px] mr-[25px]">
