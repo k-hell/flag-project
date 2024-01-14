@@ -23,14 +23,14 @@ const CountryCard = ({ selectedRegion, filterFunction }) => {
 			{loading
 				? [1, 2, 3, 4, 5, 6, 7, 8].map((loadingIndex) => (
 						<div
-							className="country-card-loading bg-white w-[300px] h-[310px] rounded-xl dark:bg-[#2b3844]"
+							className="country-card-loading bg-white w-[300px] h-[310px] rounded-xl dark:bg-dark-blue"
 							key={loadingIndex}
 						></div>
 				  ))
 				: filteredData.map((country) => (
 						<Link to={`${country.name}`} key={country.name}>
 							<div
-								className="country-card bg-white max-w-[300px] rounded-xl overflow-hidden dark:bg-[#2b3844]"
+								className="country-card bg-white max-w-[300px] rounded-xl overflow-hidden dark:bg-dark-blue"
 								key={country.name}
 							>
 								<div className="flag h-[200px]">

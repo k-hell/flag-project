@@ -53,7 +53,7 @@ export default function CountryPage() {
 									Border countries:
 									{country.borders.map((borderCountry) => (
 										<div
-											className="border-country inline-block bg-white text-[#2b3844] py-[5px] px-5 rounded-[5px] ml-2.5 dark:bg-[#2b3844] dark:text-to-white"
+											className="border-country inline-block bg-white text-dark-blue py-[5px] px-5 rounded-[5px] ml-2.5 dark:bg-dark-blue dark:text-to-white"
 											key={borderCountry}
 										>
 											{borderCountry}

@@ -9,7 +9,7 @@ function Navbar() {
 	const { themeMode } = useTheme();
 
 	return (
-		<nav className="navbar flex justify-between items-center bg-white h-[100px] fixed top-0 w-full dark:bg-[#2b3844]">
+		<nav className="navbar flex justify-between items-center bg-white h-[100px] fixed top-0 w-full dark:bg-dark-blue">
 			<NavLink
 				className="homepage no-underline text-darker-blue ml-[25px] font-semibold dark:text-to-white"
 				to="/"
