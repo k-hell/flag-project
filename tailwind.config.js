@@ -5,9 +5,9 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'primary': '#2b3844',	// darkblue
-				'secondary': '#202c36',	// darkerblue
-				'tertiary': '#f2f2f2'	// white
+				'dark-blue': '#2b3844',		// darkblue
+				'darker-blue': '#202c36',	// darkerblue
+				'to-white': '#f2f2f2'		// white
 			}
 		}
 	},
