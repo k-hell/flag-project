@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '/images/techover-logo.png';
+import ThemeBtn from './ThemeBtn';
 
 function Navbar() {
 	return (
@@ -10,12 +11,7 @@ function Navbar() {
 			</NavLink>
 			<img className="logo" src={logo} alt="Techover" />
 			<div className="nav-links">
-				{/* <NavLink className="nav-link" to="/">
-					Home
-				</NavLink> */}
-				{/* <NavLink className="nav-link" to="country">
-					Country
-				</NavLink> */}
+				<ThemeBtn />
 			</div>
 		</nav>
 	);

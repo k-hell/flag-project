@@ -2,22 +2,38 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import HomePage from './pages/HomePage';
 import CountryPage, { countriesLoader } from './pages/CountryPage';
 import RootLayout from './layouts/RootLayout';
+import { ThemeProvider } from './contexts/theme';
+import { useEffect, useState } from 'react';
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<RootLayout />}>
 			<Route index element={<HomePage />} /> {/* all countries loader missing */}
-			{/* <Route path="country" element={<CountriesLayout />}> */} {/* Error handling when entering /country/ */}
 			<Route path=":countryName" element={<CountryPage />} loader={countriesLoader} />
 		</Route>
 	)
 );
 
 function App() {
+	const [themeMode, setThemeMode] = useState('light');
+
+	const darkTheme = () => {
+		setThemeMode('dark');
+	};
+
+	const lightTheme = () => {
+		setThemeMode('light');
+	};
+
+	useEffect(() => {
+		document.querySelector('html').classList.remove('dark', 'light');
+		document.querySelector('html').classList.add(themeMode);
+	}, [themeMode]);
+
 	return (
-		<>
+		<ThemeProvider value={{ themeMode, darkTheme, lightTheme }}>
 			<RouterProvider router={router} />
-		</>
+		</ThemeProvider>
 	);
 }
 
