@@ -31,13 +31,12 @@ export default function CountryPage() {
 										Population: {country.population.toLocaleString()}
 									</p>
 									<p className="text-darker-blue dark:text-to-white">Region: {country.region}</p>
-									{Array.isArray(country.capital) ? (
-										<p className="text-darker-blue dark:text-to-white">
-											Capital: {country.capital}
-										</p>
-									) : (
-										''
-									)}
+									<p className="text-darker-blue dark:text-to-white">
+										Capital:
+										{Array.isArray(country.capital) && country.capital.length > 1
+											? ` ${country.capital.join(', ')}`
+											: ` ${country.capital ?? 'N/A'}`}
+									</p>
 									<p className="text-darker-blue dark:text-to-white">
 										Native name: {country.name.nativeName[countriesNative[0]].common}
 									</p>
