@@ -14,9 +14,12 @@ const CountryCard = ({ allCountries, selectedRegion, filterFunction }) => {
 		}, timer); // Only temporary, remove later
 	}, []);
 
+	const excludedCountries = ['Antarctica'];
+
 	const filteredData = allCountries
 		.filter((country) => !selectedRegion || country.region === selectedRegion)
 		.filter(filterFunction)
+		.filter((country) => !excludedCountries.includes(country.name.common))
 		.sort((a, b) => a.name.common.localeCompare(b.name.common));
 
 	return (
