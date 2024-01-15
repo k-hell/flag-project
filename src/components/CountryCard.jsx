@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import data from '../assets/data.json';
+import useRegionCountries from '../hooks/useRegionCountries';
 
 const CountryCard = ({ allCountries, selectedRegion, filterFunction }) => {
-	const [countries, setCountries] = useState([]);
-	const [loading, setLoading] = useState(true);
-
-	useEffect(() => {
-		const timer = Math.floor(Math.random() * 300) + 200;
-		setTimeout(() => {
-			setCountries(allCountries);
-			setLoading(false);
-		}, timer); // Only temporary, remove later
-	}, []);
+	const { countries, loading } = useRegionCountries(selectedRegion);
 
 	const excludedCountries = ['Antarctica'];
 
