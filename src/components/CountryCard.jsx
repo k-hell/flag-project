@@ -66,7 +66,9 @@ const CountryCard = ({ allCountries, selectedRegion, filterFunction }) => {
 											Capital:
 										</span>
 										<span className="capital-value text-darker-blue dark:text-to-white">
-											{` ${country.capital}`}
+											{country.capital.length > 1
+												? ` ${country.capital.join(', ')}`
+												: ` ${country.capital}`}
 										</span>
 									</div>
 								</div>
