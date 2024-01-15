@@ -5,7 +5,7 @@ export default function CountryPage() {
 
 	return (
 		<>
-			<Link className="no-underline text-darker-blue dark:text-to-white" to="/">
+			<Link className="text-darker-blue no-underline dark:text-to-white" to="/">
 				⬅ Back
 			</Link>
 			{countries.map((country) => {
@@ -13,8 +13,8 @@ export default function CountryPage() {
 				const countriesNative = Object.keys(country.name.nativeName);
 				const countriesLanguages = Object.keys(country.languages);
 				return (
-					<div key={country.name.common} className="country-page mt-[50px] flex justify-between items-center">
-						<div className="country-page-flag h-[200px] rounded-xl overflow-hidden">
+					<div key={country.name.common} className="country-page mt-[50px] flex items-center justify-between">
+						<div className="country-page-flag h-[200px] overflow-hidden rounded-xl">
 							<img
 								className="h-full min-h-[200px] w-full min-w-[300px]"
 								src={country.flags.png}
@@ -22,7 +22,7 @@ export default function CountryPage() {
 							/>
 						</div>
 						<div className="country-page-container flex flex-col">
-							<h1 className="text-3xl text-darker-blue font-semibold my-3 dark:text-to-white">
+							<h1 className="my-3 text-3xl font-semibold text-darker-blue dark:text-to-white">
 								{country.name.common}
 							</h1>
 							<div className="country-page-context-container flex justify-between gap-[200px]">
@@ -58,7 +58,7 @@ export default function CountryPage() {
 									Border countries:
 									{country.borders.map((borderCountry) => (
 										<div
-											className="border-country inline-block bg-white text-dark-blue py-[5px] px-5 rounded-[5px] ml-2.5 dark:bg-dark-blue dark:text-to-white"
+											className="border-country ml-2.5 inline-block rounded-[5px] bg-white px-5 py-[5px] text-dark-blue dark:bg-dark-blue dark:text-to-white"
 											key={borderCountry}
 										>
 											{borderCountry}

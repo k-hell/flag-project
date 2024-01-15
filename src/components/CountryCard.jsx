@@ -15,18 +15,18 @@ const CountryCard = ({ allCountries, selectedRegion, filterFunction }) => {
 		.sort((a, b) => a.name.common.localeCompare(b.name.common));
 
 	return (
-		<div className="countries-container flex flex-wrap gap-5 justify-center">
+		<div className="countries-container flex flex-wrap justify-center gap-5">
 			{loading
 				? [1, 2, 3, 4, 5, 6, 7, 8].map((loadingIndex) => (
 						<div
-							className="country-card-loading bg-white w-[300px] h-[310px] rounded-xl dark:bg-dark-blue 3card:h-[361px]"
+							className="country-card-loading h-[310px] w-[300px] rounded-xl bg-white dark:bg-dark-blue 3card:h-[361px]"
 							key={loadingIndex}
 						></div>
-				  ))
+					))
 				: filteredData.map((country) => (
 						<Link to={`${country.name.common}`} key={country.name.common}>
 							<div
-								className="country-card bg-white max-w-[300px] rounded-xl overflow-hidden dark:bg-dark-blue"
+								className="country-card max-w-[300px] overflow-hidden rounded-xl bg-white dark:bg-dark-blue"
 								key={country.name.common}
 							>
 								<div className="flag h-[200px]">
@@ -37,7 +37,7 @@ const CountryCard = ({ allCountries, selectedRegion, filterFunction }) => {
 									/>
 								</div>
 								<div className="country-info py-[15px] pl-[25px]">
-									<div className="country-name font-semibold mb-[5px] text-darker-blue dark:text-to-white">
+									<div className="country-name mb-[5px] font-semibold text-darker-blue dark:text-to-white">
 										{country.name.common}
 									</div>
 									<div className="country-population py-[5px]">
@@ -69,7 +69,7 @@ const CountryCard = ({ allCountries, selectedRegion, filterFunction }) => {
 								</div>
 							</div>
 						</Link>
-				  ))}
+					))}
 		</div>
 	);
 };

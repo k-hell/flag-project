@@ -14,9 +14,9 @@ function Navbar() {
 	};
 
 	return (
-		<nav className="navbar flex justify-between items-center bg-white h-[100px] fixed top-0 w-full dark:bg-dark-blue">
+		<nav className="navbar fixed top-0 flex h-[100px] w-full items-center justify-between bg-white dark:bg-dark-blue">
 			<NavLink
-				className="homepage no-underline text-darker-blue ml-[25px] font-semibold dark:text-to-white"
+				className="homepage ml-[25px] font-semibold text-darker-blue no-underline dark:text-to-white"
 				to="/"
 			>
 				The Flag App
@@ -29,7 +29,7 @@ function Navbar() {
 				)}
 			</div>
 			<div
-				className="nav-links flex gap-4 justify-end items-center max-w-[1200px] h-[30px] mr-[25px] cursor-pointer"
+				className="nav-links mr-[25px] flex h-[30px] max-w-[1200px] cursor-pointer items-center justify-end gap-4"
 				onClick={onClickBtn}
 			>
 				<div>
