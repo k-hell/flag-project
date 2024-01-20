@@ -6,7 +6,11 @@ import useRegionCountries from '../hooks/useRegionCountries';
 const CountryCard = ({ allCountries, selectedRegion, filterFunction }) => {
 	const { countries, loading } = useRegionCountries(selectedRegion);
 
-	const excludedCountries = ['Antarctica'];
+	const excludedCountries = [
+		{
+			/* 'Antarctica' */
+		}
+	];
 
 	const filteredData = allCountries
 		.filter((country) => !selectedRegion || country.region === selectedRegion)
@@ -24,11 +28,8 @@ const CountryCard = ({ allCountries, selectedRegion, filterFunction }) => {
 						></div>
 					))
 				: filteredData.map((country) => (
-						<Link to={`${country.name.common}`} key={country.name.common}>
-							<div
-								className="country-card max-w-[300px] overflow-hidden rounded-xl bg-white dark:bg-dark-blue"
-								key={country.name.common}
-							>
+						<Link to={`${country.cca3}`} key={country.cca3}>
+							<div className="country-card max-w-[300px] overflow-hidden rounded-xl bg-white dark:bg-dark-blue">
 								<div className="flag h-[200px]">
 									<img
 										className="h-full min-h-[200px] w-full min-w-[300px]"

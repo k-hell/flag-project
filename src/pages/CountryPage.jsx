@@ -9,9 +9,19 @@ export default function CountryPage() {
 				⬅ Back
 			</Link>
 			{countries.map((country) => {
-				const countriesCurrency = Object.keys(country.currencies);
-				const countriesNative = Object.keys(country.name.nativeName);
-				const countriesLanguages = Object.keys(country.languages);
+				const excludedCountries = ['ATA'];
+
+				const excludedFilter = countries.filter((country) => !excludedCountries.includes(country.cca3));
+
+				const excludedCountry = excludedFilter.length > 0;
+				let countriesCurrency, countriesNative, countriesLanguages;
+
+				if (excludedCountry) {
+					countriesCurrency = Object.keys(country.currencies);
+					countriesNative = Object.keys(country.name.nativeName);
+					countriesLanguages = Object.keys(country.languages);
+				}
+
 				return (
 					<div key={country.name.common} className="country-page mt-[50px] flex items-center justify-between">
 						<div className="country-page-flag h-[200px] overflow-hidden rounded-xl">
@@ -37,32 +47,45 @@ export default function CountryPage() {
 											? ` ${country.capital.join(', ')}`
 											: ` ${country.capital ?? 'N/A'}`}
 									</p>
-									<p className="text-darker-blue dark:text-to-white">
-										Native name: {country.name.nativeName[countriesNative[0]].common}
-									</p>
+									{excludedCountry ? (
+										<p className="text-darker-blue dark:text-to-white">
+											Native name: {country.name.nativeName[countriesNative[0]].common}
+										</p>
+									) : (
+										''
+									)}
 								</div>
 								<div>
 									<p className="text-darker-blue dark:text-to-white">
 										Top level domain: {country.tld}
 									</p>
-									<p className="text-darker-blue dark:text-to-white">
-										Currencies: {country.currencies[countriesCurrency[0]].name}
-									</p>
-									<p className="text-darker-blue dark:text-to-white">
-										Languages: {country.languages[countriesLanguages[0]]}
-									</p>
+									{excludedCountry ? (
+										<p className="text-darker-blue dark:text-to-white">
+											Currencies: {country.currencies[countriesCurrency[0]].name}
+										</p>
+									) : (
+										''
+									)}
+									{excludedCountry ? (
+										<p className="text-darker-blue dark:text-to-white">
+											Languages: {country.languages[countriesLanguages[0]]}
+										</p>
+									) : (
+										''
+									)}
 								</div>
 							</div>
 							{Array.isArray(country.borders) ? (
-								<div className="border-country-container mt-[30px] text-darker-blue dark:text-to-white">
-									Border countries:
+								<div className="border-country-container mt-[30px] flex w-[500px] flex-wrap items-center gap-2 text-darker-blue dark:text-to-white">
+									<span className="mr-5">Border countries:</span>
 									{country.borders.map((borderCountry) => (
-										<div
-											className="border-country ml-2.5 inline-block rounded-[5px] bg-white px-5 py-[5px] text-dark-blue dark:bg-dark-blue dark:text-to-white"
+										<Link
+											to={`/${borderCountry}`}
+											className="border-country inline-block rounded-[5px] bg-white px-5 py-[5px] text-dark-blue dark:bg-dark-blue dark:text-to-white"
 											key={borderCountry}
 										>
 											{borderCountry}
-										</div>
+										</Link>
 									))}
 								</div>
 							) : (
@@ -77,12 +100,12 @@ export default function CountryPage() {
 }
 
 export const countriesLoader = async ({ params }) => {
-	const { countryName } = params;
+	const { countryCode } = params;
 
-	const res = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
+	const res = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`);
 
 	if (!res.ok) {
-		throw Error(`Failed to load country data with name: ${countryName}`);
+		throw Error(`Failed to load country data with code: ${countryCode}`);
 	}
 
 	return res.json();
