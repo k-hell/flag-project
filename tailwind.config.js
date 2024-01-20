@@ -12,7 +12,12 @@ export default {
 			colors: {
 				'dark-blue': '#2b3844',		// darkblue
 				'darker-blue': '#202c36',	// darkerblue
-				'to-white': '#f2f2f2'		// white
+				'to-white': '#f2f2f2',		// white
+				'primary': {
+					'dark-blue': '#2b3844',
+					'darker-blue': '#202c36'
+				},
+				'secondary': '#f2f2f2'
 			}
 		}
 	},
