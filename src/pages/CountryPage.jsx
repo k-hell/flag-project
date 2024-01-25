@@ -1,8 +1,36 @@
+import React, { useState, useEffect } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 export default function CountryPage() {
 	const country = useLoaderData();
 	const excludedCountries = ['ATA'];
+	const [borderCountriesData, setBorderCountriesData] = useState([]);
+	const [loading, setLoading] = useState(true);
+
+	const loadAdditionalData = async () => {
+		if (Array.isArray(country[0].borders)) {
+			try {
+				const borderDataPromises = country[0].borders.map(async (borderCountryCode) => {
+					const response = await fetch(`https://restcountries.com/v3.1/alpha/${borderCountryCode}`);
+					if (!response.ok) {
+						throw Error(`Failed to load data for country code: ${borderCountryCode}`);
+					}
+					return response.json();
+				});
+
+				const borderCountriesData = await Promise.all(borderDataPromises);
+				setBorderCountriesData(borderCountriesData);
+			} catch (error) {
+				console.error('Error loading additional data for borders:', error.message);
+			} finally {
+				setLoading(false);
+			}
+		}
+	};
+
+	useEffect(() => {
+		loadAdditionalData();
+	}, []);
 
 	return (
 		<>
@@ -59,15 +87,22 @@ export default function CountryPage() {
 					{Array.isArray(country[0].borders) ? (
 						<div className="border-country-container mt-[30px] flex w-[500px] flex-wrap items-center gap-2 text-darker-blue dark:text-to-white">
 							<span className="mr-5">Border countries:</span>
-							{country[0].borders.map((borderCountry) => (
-								<Link
-									to={`/${borderCountry}`}
-									className="border-country inline-block rounded-[5px] bg-white px-5 py-[5px] text-dark-blue dark:bg-dark-blue dark:text-to-white"
-									key={borderCountry}
-								>
-									{borderCountry}
-								</Link>
-							))}
+							{loading ? (
+								<p className="border-country inline-block rounded-[5px] bg-white px-5 py-[5px] text-dark-blue dark:bg-dark-blue dark:text-to-white">
+									Loading border countries...
+								</p>
+							) : (
+								country[0].borders.map((borderCountryCode, index) => (
+									<Link
+										to={`/${borderCountryCode}`}
+										className="border-country inline-block rounded-[5px] bg-white px-5 py-[5px] text-dark-blue dark:bg-dark-blue dark:text-to-white"
+										key={borderCountryCode}
+										reloadDocument
+									>
+										{`${borderCountriesData[index][0].flag} ${borderCountriesData[index][0].name.common}`}
+									</Link>
+								))
+							)}
 						</div>
 					) : (
 						''
