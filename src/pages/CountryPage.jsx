@@ -88,7 +88,7 @@ export default function CountryPage() {
 							) : (
 								country[0].borders.map((borderCountryCode, index) => (
 									<Link
-										to={`/${borderCountryCode}`}
+										to={`/${country[0].borders[index]}`}
 										className="border-country"
 										key={borderCountryCode}
 										reloadDocument
