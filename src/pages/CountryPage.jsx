@@ -37,19 +37,15 @@ export default function CountryPage() {
 			<Link className="text-darker-blue no-underline dark:text-to-white" to="/">
 				⬅ Back
 			</Link>
-			<div className="country-page mt-[50px] flex items-center justify-between">
-				<div className="country-page-flag h-[200px] overflow-hidden rounded-xl">
-					<img
-						className="h-full min-h-[200px] w-full min-w-[300px]"
-						src={country[0].flags.png}
-						alt={country[0].name.common}
-					/>
+			<div className="country-page">
+				<div className="country-page-flag">
+					<img src={country[0].flags.png} alt={country[0].name.common} />
 				</div>
-				<div className="country-page-container flex flex-col">
+				<div className="country-page-container">
 					<h1 className="my-3 text-3xl font-semibold text-darker-blue dark:text-to-white">
 						{country[0].name.common}
 					</h1>
-					<div className="country-page-context-container flex justify-between gap-[200px]">
+					<div className="country-page-context-container">
 						<div>
 							<p className="text-darker-blue dark:text-to-white">
 								Population: {country[0].population.toLocaleString()}
@@ -85,17 +81,15 @@ export default function CountryPage() {
 						</div>
 					</div>
 					{Array.isArray(country[0].borders) ? (
-						<div className="border-country-container mt-[30px] flex w-[500px] flex-wrap items-center gap-2 text-darker-blue dark:text-to-white">
+						<div className="border-country-container">
 							<span className="mr-5">Border countries:</span>
 							{loading ? (
-								<p className="border-country inline-block rounded-[5px] bg-white px-5 py-[5px] text-dark-blue dark:bg-dark-blue dark:text-to-white">
-									Loading border countries...
-								</p>
+								<p className="border-country">Loading border countries...</p>
 							) : (
 								country[0].borders.map((borderCountryCode, index) => (
 									<Link
 										to={`/${borderCountryCode}`}
-										className="border-country inline-block rounded-[5px] bg-white px-5 py-[5px] text-dark-blue dark:bg-dark-blue dark:text-to-white"
+										className="border-country"
 										key={borderCountryCode}
 										reloadDocument
 									>

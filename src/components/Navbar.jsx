@@ -14,24 +14,18 @@ function Navbar() {
 	};
 
 	return (
-		<nav className="navbar fixed top-0 flex h-[100px] w-full items-center justify-between bg-white dark:bg-dark-blue">
-			<NavLink
-				className="homepage ml-[25px] font-semibold text-darker-blue no-underline dark:text-to-white"
-				to="/"
-			>
+		<nav className="navbar">
+			<NavLink className="homepage" to="/">
 				The Flag App
 			</NavLink>
 			<div>
 				{themeMode === 'light' ? (
-					<img className="darkLogo 1card:hidden" src="./images/techover-logo-dark.png" alt="Techover" />
+					<img className="logo" src="./images/techover-logo-dark.png" alt="Techover" />
 				) : (
-					<img className="lightLogo 1card:hidden" src="./images/techover-logo.png" alt="Techover" />
+					<img className="logo" src="./images/techover-logo.png" alt="Techover" />
 				)}
 			</div>
-			<div
-				className="nav-links mr-[25px] flex h-[30px] max-w-[1200px] cursor-pointer items-center justify-end gap-4"
-				onClick={onClickBtn}
-			>
+			<div className="nav-links" onClick={onClickBtn}>
 				<div>
 					{themeMode === 'light' ? (
 						<img src="./images/moon-bordered.svg" alt="Theme Changer" />

@@ -19,49 +19,32 @@ const CountryCard = ({ allCountries, selectedRegion, filterFunction }) => {
 		.sort((a, b) => a.name.common.localeCompare(b.name.common));
 
 	return (
-		<div className="countries-container flex flex-wrap justify-center gap-5">
+		<div className="countries-container">
 			{loading
 				? [1, 2, 3, 4, 5, 6, 7, 8].map((loadingIndex) => (
-						<div
-							className="country-card-loading h-[310px] w-[300px] rounded-xl bg-white dark:bg-dark-blue 3card:h-[361px]"
-							key={loadingIndex}
-						></div>
+						<div className="country-card-loading" key={loadingIndex}></div>
 					))
 				: filteredData.map((country) => (
 						<Link to={`${country.cca3}`} key={country.cca3}>
-							<div className="country-card max-w-[300px] overflow-hidden rounded-xl bg-white dark:bg-dark-blue">
-								<div className="flag h-[200px]">
-									<img
-										className="h-full min-h-[200px] w-full min-w-[300px]"
-										src={country.flags.png}
-										alt="flag"
-									/>
+							<div className="country-card">
+								<div className="flag">
+									<img src={country.flags.png} alt="flag" />
 								</div>
-								<div className="country-info py-[15px] pl-[25px]">
-									<div className="country-name mb-[5px] font-semibold text-darker-blue dark:text-to-white">
-										{country.name.common}
-									</div>
-									<div className="country-population py-[5px]">
-										<span className="population-title font-semibold text-darker-blue dark:text-to-white">
-											Population:
-										</span>
-										<span className="population-value text-darker-blue dark:text-to-white">
+								<div className="country-info">
+									<div className="country-name">{country.name.common}</div>
+									<div className="country-population">
+										<span className="population-title">Population:</span>
+										<span className="population-value">
 											{` ${country.population.toLocaleString()}`}
 										</span>
 									</div>
-									<div className="country-region py-[5px]">
-										<span className="region-title font-semibold text-darker-blue dark:text-to-white">
-											Region:
-										</span>
-										<span className="region-value text-darker-blue dark:text-to-white">
-											{` ${country.region}`}
-										</span>
+									<div className="country-region">
+										<span className="region-title">Region:</span>
+										<span className="region-value">{` ${country.region}`}</span>
 									</div>
-									<div className="country-capital py-[5px]">
-										<span className="capital-title font-semibold text-darker-blue dark:text-to-white">
-											Capital:
-										</span>
-										<span className="capital-value text-darker-blue dark:text-to-white">
+									<div className="country-capital">
+										<span className="capital-title">Capital:</span>
+										<span className="capital-value">
 											{Array.isArray(country.capital) && country.capital.length > 1
 												? ` ${country.capital.join(', ')}`
 												: ` ${country.capital ?? 'N/A'}`}

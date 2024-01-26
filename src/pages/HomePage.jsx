@@ -28,8 +28,8 @@ export default function HomePage() {
 	};
 
 	return (
-		<div className="home-page pb-[70px]">
-			<div className="country-search-container m-auto mb-5 mt-0 flex max-w-[1260px] justify-between 3card:max-w-[940px] 2card:max-w-[620px] 1card:flex-col 1card:gap-[25px]">
+		<div className="home-page">
+			<div className="country-search-container">
 				<SearchBar value={searchQuery} onChange={handleSearchChange} />
 				<Dropdown handleRegionChange={handleRegionChange} />
 			</div>
