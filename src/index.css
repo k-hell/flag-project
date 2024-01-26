@@ -134,7 +134,7 @@
 
 	/* HomePage */
 	.home-page {
-		@apply pb-[70px];
+		@apply pb-[70px] text-sm;
 	}
 
 	.country-search-container {
