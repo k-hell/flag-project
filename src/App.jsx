@@ -5,6 +5,11 @@ import RootLayout from './layouts/RootLayout';
 import { ThemeProvider } from './contexts/theme';
 import { useEffect, useState } from 'react';
 
+const getInitialThemeMode = () => {
+	const storedThemeMode = localStorage.getItem('themeMode');
+	return storedThemeMode ? storedThemeMode : import.meta.env.MODE === 'development' ? 'dark' : 'light';
+};
+
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<RootLayout />}>
@@ -15,7 +20,7 @@ const router = createBrowserRouter(
 );
 
 function App() {
-	const [themeMode, setThemeMode] = useState(import.meta.env.MODE === 'development' ? 'dark' : 'light');
+	const [themeMode, setThemeMode] = useState(getInitialThemeMode);
 
 	const darkTheme = () => {
 		setThemeMode('dark');
@@ -28,6 +33,7 @@ function App() {
 	useEffect(() => {
 		document.querySelector('html').classList.remove('dark', 'light');
 		document.querySelector('html').classList.add(themeMode);
+		localStorage.setItem('themeMode', themeMode);
 	}, [themeMode]);
 
 	return (
