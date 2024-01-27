@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTheme from '../contexts/theme';
 
 export default function CountryPage() {
 	const country = useLoaderData();
 	const excludedCountries = ['ATA'];
 	const [borderCountriesData, setBorderCountriesData] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const { themeMode } = useTheme();
 
 	const loadAdditionalData = async () => {
 		if (Array.isArray(country[0].borders)) {
@@ -34,8 +36,13 @@ export default function CountryPage() {
 
 	return (
 		<>
-			<Link className="text-darker-blue no-underline dark:text-to-white" to="/">
-				⬅ Back
+			<Link className="flex gap-3 text-darker-blue no-underline dark:text-to-white" to="/">
+				{themeMode === 'light' ? (
+					<img src="./images/arrow-left-dark.svg" alt="Back Arrow" />
+				) : (
+					<img src="./images/arrow-left.svg" alt="Back Arrow" />
+				)}
+				<span>Back</span>
 			</Link>
 			<div className="country-page">
 				<div className="country-page-flag">

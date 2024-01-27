@@ -1,9 +1,19 @@
 import React from 'react';
+import useTheme from '../contexts/theme';
 
 const Dropdown = ({ handleRegionChange }) => {
+	const { themeMode } = useTheme();
+
 	return (
 		<div className="filterdropdown group">
-			Filter by Region
+			<span>Filter by Region</span>
+			<div>
+				{themeMode === 'light' ? (
+					<img src="./images/arrow-down-dark.svg" alt="Dropdown Menu" />
+				) : (
+					<img src="./images/arrow-down-light.svg" alt="Dropdown Menu" />
+				)}
+			</div>
 			<div className="dropdown-content">
 				<a className="dropdown-link rounded-t-xl" onClick={() => handleRegionChange(null)}>
 					All

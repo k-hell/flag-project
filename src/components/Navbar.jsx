@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import useTheme from '../contexts/theme';
 
 function Navbar() {
@@ -15,9 +15,9 @@ function Navbar() {
 
 	return (
 		<nav className="navbar">
-			<NavLink className="homepage" to="/">
+			<Link className="homepage" to="/">
 				The Flag App
-			</NavLink>
+			</Link>
 			<div>
 				{themeMode === 'light' ? (
 					<img className="logo" src="./images/techover-logo-dark.png" alt="Techover" />
