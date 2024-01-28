@@ -6,8 +6,12 @@ import { ThemeProvider } from './contexts/theme';
 import { useEffect, useState } from 'react';
 
 const getInitialThemeMode = () => {
-	const storedThemeMode = localStorage.getItem('themeMode');
-	return storedThemeMode ? storedThemeMode : import.meta.env.MODE === 'development' ? 'dark' : 'light';
+	if (import.meta.env.MODE === 'development') {
+		return 'dark';
+	} else {
+		const storedThemeMode = localStorage.getItem('themeMode');
+		return storedThemeMode ? storedThemeMode : 'light';
+	}
 };
 
 const router = createBrowserRouter(
@@ -33,7 +37,9 @@ function App() {
 	useEffect(() => {
 		document.querySelector('html').classList.remove('dark', 'light');
 		document.querySelector('html').classList.add(themeMode);
-		localStorage.setItem('themeMode', themeMode);
+		if (import.meta.env.MODE !== 'development') {
+			localStorage.setItem('themeMode', themeMode);
+		}
 	}, [themeMode]);
 
 	return (
