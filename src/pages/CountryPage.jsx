@@ -36,7 +36,7 @@ export default function CountryPage() {
 
 	return (
 		<>
-			<Link className="flex gap-3 text-darker-blue no-underline dark:text-to-white" to="/">
+			<Link className="standard-text flex gap-3 no-underline 1card:w-[320px]" to="/">
 				{themeMode === 'light' ? (
 					<img src="./images/arrow-left-dark.svg" alt="Back Arrow" />
 				) : (
@@ -49,22 +49,18 @@ export default function CountryPage() {
 					<img src={country[0].flags.png} alt={country[0].name.common} />
 				</div>
 				<div className="country-page-container">
-					<h1 className="my-3 text-3xl font-semibold text-darker-blue dark:text-to-white">
-						{country[0].name.common}
-					</h1>
+					<h1>{country[0].name.common}</h1>
 					<div className="country-page-context-container">
 						<div>
-							<p className="text-darker-blue dark:text-to-white">
-								Population: {country[0].population.toLocaleString()}
-							</p>
-							<p className="text-darker-blue dark:text-to-white">Region: {country[0].region}</p>
-							<p className="text-darker-blue dark:text-to-white">
+							<p className="standard-text">Population: {country[0].population.toLocaleString()}</p>
+							<p className="standard-text">Region: {country[0].region}</p>
+							<p className="standard-text">
 								Capital:
 								{Array.isArray(country[0].capital) && country[0].capital.length > 1
 									? ` ${country[0].capital.join(', ')}`
 									: ` ${country[0].capital ?? 'N/A'}`}
 							</p>
-							<p className="text-darker-blue dark:text-to-white">
+							<p className="standard-text">
 								Native name:
 								{!excludedCountries.includes(country[0].cca3)
 									? ` ${country[0].name.nativeName[Object.keys(country[0].name.nativeName)[0]].common}`
@@ -72,14 +68,14 @@ export default function CountryPage() {
 							</p>
 						</div>
 						<div>
-							<p className="text-darker-blue dark:text-to-white">Top level domain: {country[0].tld[0]}</p>
-							<p className="text-darker-blue dark:text-to-white">
+							<p className="standard-text">Top level domain: {country[0].tld[0]}</p>
+							<p className="standard-text">
 								Currencies:
 								{!excludedCountries.includes(country[0].cca3)
 									? ` ${country[0].currencies[Object.keys(country[0].currencies)[0]].name} ( ${country[0].currencies[Object.keys(country[0].currencies)[0]].symbol} )`
 									: ` N/A`}
 							</p>
-							<p className="text-darker-blue dark:text-to-white">
+							<p className="standard-text">
 								Languages:
 								{!excludedCountries.includes(country[0].cca3)
 									? ` ${Object.values(country[0].languages).join(', ')}`
@@ -89,7 +85,7 @@ export default function CountryPage() {
 					</div>
 					{Array.isArray(country[0].borders) ? (
 						<div className="border-country-container">
-							<span className="mr-5">Border countries:</span>
+							<span>Border countries:</span>
 							{loading ? (
 								<p className="border-country">Loading border countries...</p>
 							) : (

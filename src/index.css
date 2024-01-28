@@ -10,6 +10,13 @@
 }
 
 @layer components {
+	.root-layout header {
+		@apply h-[100px];
+	}
+	.root-layout main {
+		@apply m-auto mt-6 flex max-w-[1440px] flex-col 1card:items-center;
+	}
+
 	/* Navbar */
 	.navbar {
 		@apply fixed top-0 flex h-[100px] w-full items-center justify-between bg-white dark:bg-dark-blue;
@@ -121,29 +128,41 @@
 	/* End of CountryCard */
 
 	/* CountryPage */
+	.standard-text {
+		@apply text-darker-blue dark:text-to-white;
+	}
+
 	.country-page {
-		@apply mt-[50px] flex items-center justify-between;
+		@apply mt-5 flex justify-between gap-5 1card:flex-col 1card:justify-center;
 	}
 
-	.country-page-flag {
+	/* .country-page-flag {
 		@apply h-[350px] overflow-hidden rounded-xl;
-	}
+	} */
 
-	.country-page-flag img {
+	/* .country-page-flag img {
 		@apply h-full w-full;
-	}
+	} */
 
 	.country-page-container {
-		@apply flex flex-col;
+		@apply flex flex-col gap-3;
 	}
+	.country-page-container h1 {
+		@apply standard-text text-3xl font-semibold;
+	}
+
 	.country-page-context-container {
-		@apply flex justify-between gap-[200px];
+		@apply flex justify-between gap-12 1card:w-[320px] 1card:flex-col 1card:gap-0;
 	}
+
 	.border-country-container {
-		@apply mt-[30px] flex w-[500px] flex-wrap items-center gap-2 text-darker-blue dark:text-to-white;
+		@apply mt-4 flex w-[500px] flex-wrap items-center gap-2 1card:w-[320px];
+	}
+	.border-country-container span {
+		@apply mr-5 text-darker-blue dark:text-to-white;
 	}
 	.border-country {
-		@apply inline-block rounded-[5px] bg-white px-5 py-[5px] text-dark-blue dark:bg-dark-blue dark:text-to-white;
+		@apply inline-block rounded-md bg-white px-5 py-1 text-dark-blue dark:bg-dark-blue dark:text-to-white;
 	}
 	/* End of CountryPage */
 }
