@@ -4,10 +4,14 @@ import useTheme from '../contexts/theme';
 
 export default function CountryPage() {
 	const country = useLoaderData();
-	const excludedCountries = ['ATA'];
 	const [borderCountriesData, setBorderCountriesData] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const { themeMode } = useTheme();
+
+	const excludedCountries = [
+		{ code: 'ATA', excluded: ['nativeName', 'currencies', 'languages'] },
+		{ code: 'UNK', excluded: ['tld'] }
+	];
 
 	const loadAdditionalData = async () => {
 		if (Array.isArray(country[0].borders)) {
@@ -62,26 +66,33 @@ export default function CountryPage() {
 							</p>
 							<p className="standard-text">
 								Native name:
-								{!excludedCountries.includes(country[0].cca3)
+								{!excludedCountries
+									.find((c) => c.code === country[0].cca3)
+									.excluded.includes('nativeName')
 									? ` ${country[0].name.nativeName[Object.keys(country[0].name.nativeName)[0]].common}`
 									: ` N/A`}
 							</p>
 						</div>
 						<div>
-							{!['UNK'].includes(country[0].cca3) ? (
-								<p className="standard-text">Top level domain: {country[0].tld[0]}</p>
-							) : (
-								''
-							)}
+							<p className="standard-text">
+								Top level domain:
+								{!excludedCountries.find((c) => c.code === country[0].cca3).excluded.includes('tld')
+									? ` ${country[0].tld[0]}`
+									: ` N/A`}
+							</p>
 							<p className="standard-text">
 								Currencies:
-								{!excludedCountries.includes(country[0].cca3)
+								{!excludedCountries
+									.find((c) => c.code === country[0].cca3)
+									.excluded.includes('currencies')
 									? ` ${country[0].currencies[Object.keys(country[0].currencies)[0]].name} ( ${country[0].currencies[Object.keys(country[0].currencies)[0]].symbol} )`
 									: ` N/A`}
 							</p>
 							<p className="standard-text">
 								Languages:
-								{!excludedCountries.includes(country[0].cca3)
+								{!excludedCountries
+									.find((c) => c.code === country[0].cca3)
+									.excluded.includes('languages')
 									? ` ${Object.values(country[0].languages).join(', ')}`
 									: ` N/A`}
 							</p>
