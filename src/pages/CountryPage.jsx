@@ -10,7 +10,8 @@ export default function CountryPage() {
 
 	const excludedCountries = [
 		{ code: 'ATA', excluded: ['nativeName', 'currencies', 'languages'] },
-		{ code: 'UNK', excluded: ['tld'] }
+		{ code: 'UNK', excluded: ['tld'] },
+		{ code: country[0].cca3, excluded: [] }
 	];
 
 	const loadAdditionalData = async () => {
