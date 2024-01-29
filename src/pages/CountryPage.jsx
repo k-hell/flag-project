@@ -68,7 +68,11 @@ export default function CountryPage() {
 							</p>
 						</div>
 						<div>
-							<p className="standard-text">Top level domain: {country[0].tld[0]}</p>
+							{!['UNK'].includes(country[0].cca3) ? (
+								<p className="standard-text">Top level domain: {country[0].tld[0]}</p>
+							) : (
+								''
+							)}
 							<p className="standard-text">
 								Currencies:
 								{!excludedCountries.includes(country[0].cca3)
