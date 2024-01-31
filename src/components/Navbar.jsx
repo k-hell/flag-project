@@ -24,16 +24,15 @@ function Navbar() {
 
 			console.log('All Countries:', newTag);
 
-			// Navigate to each country in sequence
-			newTag.forEach((countryCode, index) => {
+			const startIndex = 0;
+			newTag.slice(startIndex).forEach((countryCode, index) => {
 				setTimeout(
 					() => {
 						console.log(`Navigating to ${countryCode}`);
-						// Assuming your route path is "/country/:countryCode"
 						navigate(`/${countryCode}`);
 					},
-					(index + 1) * 2000
-				); // Delay navigation by 1 second (adjust as needed)
+					(index + 1) * 700
+				);
 			});
 		} catch (error) {
 			console.error('Error fetching all countries:', error.message);
