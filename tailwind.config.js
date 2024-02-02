@@ -6,7 +6,7 @@ export default {
 		screens: {
 			'3card': { max: '1259px' },
 			'2card': { max: '939px' },
-			'1card': { max: '659px' }
+			'1card': { max: '619px' }
 		},
 		extend: {
 			colors: {
