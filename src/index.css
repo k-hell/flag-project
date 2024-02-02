@@ -44,16 +44,16 @@
 
 	/* SearchBar */
 	.searchbar {
-		@apply flex h-[50px] w-[470px] items-center justify-start rounded-xl border-none bg-white p-[30px] text-darker-blue dark:bg-dark-blue dark:text-to-white 2card:w-[250px] 1card:m-0 1card:mx-auto 1card:h-[70px] 1card:w-[350px];
+		@apply flex h-14 w-96 items-center justify-start rounded-xl	border-none bg-white p-8 text-darker-blue dark:bg-dark-blue dark:text-to-white 2card:w-80 1card:m-0 1card:mx-auto 1card:h-16 1card:w-80;
 	}
 	/* End of SearchBar */
 
 	/* Dropdown */
 	.filterdropdown {
-		@apply relative flex h-[50px] w-[200px] items-center justify-between rounded-xl bg-white p-[30px] text-darker-blue dark:bg-dark-blue dark:text-to-white 1card:ml-[12.5px] 1card:mr-auto 1card:h-[70px];
+		@apply relative flex h-14 w-48 items-center justify-between rounded-xl bg-white p-8 text-darker-blue dark:bg-dark-blue dark:text-to-white 1card:m-0 1card:mx-auto 1card:h-16 1card:w-80;
 	}
 	.dropdown-content {
-		@apply absolute left-0 top-[60px] z-[1] hidden w-[200px] rounded-xl border border-solid border-[hsla(0,0%,100%,0.075)] bg-white group-hover:block dark:bg-dark-blue 1card:top-[75px];
+		@apply absolute left-0 top-[60px] z-[1] hidden w-48 rounded-xl border border-solid border-[hsla(0,0%,100%,0.075)] bg-white group-hover:block dark:bg-dark-blue 1card:top-[75px];
 	}
 
 	.dropdown-link {
