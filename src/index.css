@@ -228,5 +228,9 @@
 	.border-country {
 		@apply inline-block rounded-md bg-white px-5 py-1 text-dark-blue dark:bg-dark-blue dark:text-to-white;
 	}
+
+	.border-country:hover {
+		@apply bg-dark-blue bg-opacity-15 dark:bg-to-white dark:bg-opacity-30;
+	}
 	/* End of CountryPage */
 }
