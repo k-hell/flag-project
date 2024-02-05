@@ -75,6 +75,15 @@
 	.searchbar {
 		@apply standard-text flex h-14 w-96 items-center justify-start rounded-xl border-none bg-white p-8 dark:bg-dark-blue 2card:w-80 1card:m-0 1card:mx-auto 1card:h-16 1card:w-80;
 	}
+
+	.searchbar:focus-visible {
+		@apply outline-none;
+	}
+
+	.searchbar::placeholder {
+		@apply standard-text;
+	}
+
 	/* End of SearchBar */
 
 	/* Dropdown */
