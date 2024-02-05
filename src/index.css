@@ -13,6 +13,7 @@
 	.root-layout header {
 		@apply h-[100px];
 	}
+
 	.root-layout main {
 		@apply m-auto mt-6 flex max-w-[1440px] flex-col 1card:items-center;
 	}
@@ -21,14 +22,42 @@
 	.navbar {
 		@apply fixed top-0 flex h-[100px] w-full items-center justify-between bg-white dark:bg-dark-blue;
 	}
-	.homepage {
-		@apply ml-[25px] font-semibold text-darker-blue no-underline dark:text-to-white;
+
+	.navbar a {
+		@apply standard-text ml-6 max-w-28 font-semibold;
 	}
+
 	.logo {
 		@apply 1card:hidden;
 	}
+
 	.nav-links {
-		@apply mr-[25px] flex h-[30px] max-w-[1200px] cursor-pointer items-center justify-end gap-4;
+		@apply flex justify-center gap-4;
+	}
+
+	.nav-button {
+		@apply relative w-full cursor-pointer text-center leading-10;
+	}
+
+	.nav-effect:after,
+	.nav-effect:before {
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		content: '';
+		border: 1px solid rgba(255, 255, 255, 0);
+		@apply relative bottom-0 mx-auto my-0 block w-0 transition-all duration-300 ease-in-out;
+	}
+
+	.nav-effect:hover:after,
+	.nav-effect:hover:before {
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		transition: width 350ms ease-in-out;
+		@apply w-[90%] border-primary-darker-blue dark:border-white;
+	}
+
+	.nav-effect:hover:before {
+		@apply bottom-auto top-0 w-[90%];
 	}
 	/* End of Navbar */
 
@@ -44,20 +73,21 @@
 
 	/* SearchBar */
 	.searchbar {
-		@apply flex h-14 w-96 items-center justify-start rounded-xl	border-none bg-white p-8 text-darker-blue dark:bg-dark-blue dark:text-to-white 2card:w-80 1card:m-0 1card:mx-auto 1card:h-16 1card:w-80;
+		@apply standard-text flex h-14 w-96 items-center justify-start rounded-xl	border-none bg-white p-8 dark:bg-dark-blue 2card:w-80 1card:m-0 1card:mx-auto 1card:h-16 1card:w-80;
 	}
 	/* End of SearchBar */
 
 	/* Dropdown */
 	.filterdropdown {
-		@apply relative flex h-14 w-48 items-center justify-between rounded-xl bg-white p-8 text-darker-blue dark:bg-dark-blue dark:text-to-white 1card:m-0 1card:mx-auto 1card:h-16 1card:w-80;
+		@apply standard-text relative flex h-14 w-48 items-center justify-between rounded-xl bg-white p-8 dark:bg-dark-blue 1card:m-0 1card:mx-auto 1card:h-16 1card:w-80;
 	}
+
 	.dropdown-content {
 		@apply absolute left-0 top-[60px] z-[1] hidden w-48 rounded-xl border border-solid border-[hsla(0,0%,100%,0.075)] bg-white group-hover:block dark:bg-dark-blue 1card:top-[75px];
 	}
 
 	.dropdown-link {
-		@apply block px-[30px] py-[15px] no-underline hover:bg-to-white dark:text-white dark:hover:bg-darker-blue;
+		@apply standard-text block px-[30px] py-[15px] no-underline hover:bg-to-white dark:hover:bg-darker-blue;
 	}
 	/* End of Dropdown */
 
@@ -87,7 +117,7 @@
 	}
 
 	.country-name {
-		@apply mb-[5px] font-semibold text-darker-blue dark:text-to-white;
+		@apply standard-text mb-[5px] font-semibold;
 	}
 
 	.country-population {
@@ -95,11 +125,11 @@
 	}
 
 	.population-title {
-		@apply font-semibold text-darker-blue dark:text-to-white;
+		@apply standard-text font-semibold;
 	}
 
 	.population-value {
-		@apply text-darker-blue dark:text-to-white;
+		@apply standard-text;
 	}
 
 	.country-region {
@@ -107,11 +137,11 @@
 	}
 
 	.region-title {
-		@apply font-semibold text-darker-blue dark:text-to-white;
+		@apply standard-text font-semibold;
 	}
 
 	.region-value {
-		@apply text-darker-blue dark:text-to-white;
+		@apply standard-text;
 	}
 
 	.country-capital {
@@ -119,15 +149,46 @@
 	}
 
 	.capital-title {
-		@apply font-semibold text-darker-blue dark:text-to-white;
+		@apply standard-text font-semibold;
 	}
 
 	.capital-value {
-		@apply text-darker-blue dark:text-to-white;
+		@apply standard-text;
 	}
 	/* End of CountryCard */
 
 	/* CountryPage */
+	.back-button {
+		@apply standard-text relative inline-block w-36 overflow-hidden rounded-md py-3 text-center;
+	}
+
+	.back-button.back-effect {
+		@apply transition-all delay-0 duration-200 ease-linear;
+	}
+
+	.back-button.back-effect:before {
+		content: '';
+		border-radius: 6px 0px 0px 6px;
+		background-size: 20px;
+		@apply absolute -left-7 top-0 flex h-full w-7 items-center justify-center bg-dark-blue bg-opacity-15 bg-center bg-no-repeat transition-all delay-0 duration-200 ease-linear dark:bg-white dark:bg-opacity-30;
+	}
+
+	.back-btn-light:before {
+		background-image: url('../images/arrow-left.svg');
+	}
+
+	.back-btn-dark:before {
+		background-image: url('../images/arrow-left-dark.svg');
+	}
+
+	.back-button.back-effect:hover {
+		@apply indent-7;
+	}
+
+	.back-button.back-effect:hover:before {
+		@apply left-0 indent-0;
+	}
+
 	.standard-text {
 		@apply text-darker-blue dark:text-to-white;
 	}
@@ -147,6 +208,7 @@
 	.country-page-container {
 		@apply flex flex-col gap-3;
 	}
+
 	.country-page-container h1 {
 		@apply standard-text text-3xl font-semibold;
 	}
@@ -158,9 +220,11 @@
 	.border-country-container {
 		@apply mt-4 flex w-[500px] flex-wrap items-center gap-2 1card:w-[320px];
 	}
+
 	.border-country-container span {
-		@apply mr-5 text-darker-blue dark:text-to-white;
+		@apply standard-text mr-5;
 	}
+
 	.border-country {
 		@apply inline-block rounded-md bg-white px-5 py-1 text-dark-blue dark:bg-dark-blue dark:text-to-white;
 	}

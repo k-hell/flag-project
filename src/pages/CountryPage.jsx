@@ -43,12 +43,10 @@ export default function CountryPage() {
 
 	return (
 		<>
-			<Link className="standard-text flex gap-3 no-underline 1card:w-[320px]" to="/">
-				{themeMode === 'light' ? (
-					<img src="./images/arrow-left-dark.svg" alt="Back Arrow" />
-				) : (
-					<img src="./images/arrow-left.svg" alt="Back Arrow" />
-				)}
+			<Link
+				className={`back-button back-effect bg-white dark:bg-primary-dark-blue ${themeMode === 'light' ? 'back-btn-dark' : 'back-btn-light'}`}
+				to="/"
+			>
 				<span>Back</span>
 			</Link>
 			<div className="country-page">
