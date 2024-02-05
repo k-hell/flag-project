@@ -53,10 +53,11 @@ export default function CountryPage() {
 				<div className="country-page-flag">
 					<img src={country[0].flags.png} alt={country[0].name.common} />
 				</div>
-				<div className="country-page-container">
+				<div className="country-page-container max-w-72">
+					{/* max-w-72 temporary */}
 					<h1>{country[0].name.common}</h1>
 					<div className="country-page-context-container">
-						<div>
+						<div className="w-full max-w-52">
 							<p className="standard-text">
 								<span className="font-semibold">Population:</span>
 								{` ${country[0].population.toLocaleString()}`}
@@ -80,7 +81,7 @@ export default function CountryPage() {
 									: ` N/A`}
 							</p>
 						</div>
-						<div>
+						<div className="w-full max-w-56">
 							<p className="standard-text">
 								<span className="font-semibold">Top level domain:</span>
 								{!excludedCountries.find((c) => c.code === country[0].cca3).excluded.includes('tld')

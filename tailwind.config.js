@@ -3,12 +3,12 @@ export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	darkMode: 'class',
 	theme: {
-		screens: {
-			'3card': { max: '1259px' },
-			'2card': { max: '939px' },
-			'1card': { max: '619px' }
-		},
 		extend: {
+			screens: {
+				'3card': { max: '1339px' },
+				'2card': { max: '1019px' },
+				'1card': { max: '699px' }
+			},
 			colors: {
 				'dark-blue': '#2b3844',		// darkblue
 				'darker-blue': '#202c36',	// darkerblue
