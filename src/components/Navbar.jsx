@@ -27,7 +27,7 @@ function Navbar() {
 					)}
 				</div>
 			</Link>
-			<div className="nav-button nav-effect mr-6 max-w-40" onClick={onClickBtn}>
+			<div className="nav-button nav-effect max-w-40" onClick={onClickBtn}>
 				<div className="nav-links">
 					{themeMode === 'light' ? (
 						<img src="./images/moon-bordered.svg" alt="Theme Changer" />
