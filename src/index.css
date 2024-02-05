@@ -11,20 +11,20 @@
 
 @layer components {
 	.root-layout header {
-		@apply h-[100px];
+		@apply fixed top-0 mx-auto h-[100px] w-full bg-white dark:bg-dark-blue;
 	}
 
 	.root-layout main {
-		@apply mx-auto mt-6 flex max-w-[1300px] flex-col justify-center 3card:max-w-[980px] 2card:max-w-[660px] 1card:max-w-[340px];
+		@apply mx-auto mt-[7.75rem] flex max-w-[1300px] flex-col justify-center 3card:max-w-[980px] 2card:max-w-[660px] 1card:max-w-[340px];
 	}
 
 	/* Navbar */
 	.navbar {
-		@apply fixed top-0 flex h-[100px] w-full items-center justify-between bg-white dark:bg-dark-blue;
+		@apply mx-auto flex h-[100px] w-full max-w-[1260px] items-center justify-between 3card:max-w-[940px];
 	}
 
 	.navbar a {
-		@apply standard-text ml-6 max-w-28 font-semibold;
+		@apply standard-text max-w-28 font-semibold;
 	}
 
 	.logo {
@@ -63,11 +63,11 @@
 
 	/* HomePage */
 	.home-page {
-		@apply pb-[70px] text-sm;
+		@apply px-5 pb-[70px] text-sm;
 	}
 
 	.country-search-container {
-		@apply mx-auto mb-5 flex max-w-[1260px] justify-between 3card:max-w-[940px] 2card:max-w-[620px] 1card:flex-col 1card:gap-[25px];
+		@apply mx-auto mb-5 flex justify-between 1card:flex-col 1card:gap-[25px];
 	}
 	/* End of HomePage */
 
@@ -102,7 +102,7 @@
 
 	/* CountryCard */
 	.countries-container {
-		@apply mx-auto flex max-w-[1260px] flex-wrap justify-center gap-5;
+		@apply mx-auto flex flex-wrap justify-center gap-5;
 	}
 
 	.country-card-loading {
