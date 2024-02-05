@@ -202,7 +202,7 @@
 	}
 
 	.country-page-flag {
-		@apply aspect-[3/2] h-96 w-[calc(3/2*24rem)] overflow-hidden rounded-xl;
+		@apply aspect-[3/2] h-96 w-[calc(3/2*24rem)] overflow-hidden rounded-xl 3card:h-80 3card:w-[calc(3/2*20rem)] 2card:h-72 2card:w-[calc(3/2*18rem)] 1card:h-56 1card:w-[calc(3/2*14rem)];
 	}
 
 	.country-page-flag img {
@@ -211,7 +211,7 @@
 	}
 
 	.country-page-container {
-		@apply flex flex-col gap-3;
+		@apply flex max-w-[42rem] flex-col gap-3 3card:max-w-[28rem] 2card:max-w-96;
 	}
 
 	.country-page-container h1 {

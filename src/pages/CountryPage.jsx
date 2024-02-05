@@ -53,8 +53,7 @@ export default function CountryPage() {
 				<div className="country-page-flag">
 					<img src={country[0].flags.png} alt={country[0].name.common} />
 				</div>
-				<div className="country-page-container max-w-72">
-					{/* max-w-72 temporary */}
+				<div className="country-page-container">
 					<h1>{country[0].name.common}</h1>
 					<div className="country-page-context-container">
 						<div className="w-full max-w-52">
