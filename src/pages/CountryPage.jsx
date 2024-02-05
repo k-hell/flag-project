@@ -3,10 +3,13 @@ import { Link, useLoaderData } from 'react-router-dom';
 import useTheme from '../contexts/theme';
 
 export default function CountryPage() {
-	const country = useLoaderData();
-	const [borderCountriesData, setBorderCountriesData] = useState([]);
+	const { country, allCountries } = useLoaderData();
 	const [loading, setLoading] = useState(true);
 	const { themeMode } = useTheme();
+
+	const filteredBorderCountries = allCountries.filter((borderCountryCode) =>
+		country[0].borders.includes(borderCountryCode.cca3)
+	);
 
 	const excludedCountries = [
 		{ code: 'ATA', excluded: ['nativeName', 'currencies', 'languages'] },
@@ -16,29 +19,10 @@ export default function CountryPage() {
 		{ code: country[0].cca3, excluded: [] }
 	];
 
-	const loadAdditionalData = async () => {
-		if (Array.isArray(country[0].borders)) {
-			try {
-				const borderDataPromises = country[0].borders.map(async (borderCountryCode) => {
-					const response = await fetch(`https://restcountries.com/v3.1/alpha/${borderCountryCode}`);
-					if (!response.ok) {
-						throw Error(`Failed to load data for country code: ${borderCountryCode}`);
-					}
-					return response.json();
-				});
-
-				const borderCountriesData = await Promise.all(borderDataPromises);
-				setBorderCountriesData(borderCountriesData);
-			} catch (error) {
-				console.error('Error loading additional data for borders:', error.message);
-			} finally {
-				setLoading(false);
-			}
-		}
-	};
-
 	useEffect(() => {
-		loadAdditionalData();
+		setTimeout(() => {
+			setLoading(false);
+		}, 500); //temporary
 	}, []);
 
 	return (
@@ -111,14 +95,13 @@ export default function CountryPage() {
 							{loading ? (
 								<p className="border-country">Loading border countries...</p>
 							) : (
-								country[0].borders.map((borderCountryCode, index) => (
+								filteredBorderCountries.map((borderCountry) => (
 									<Link
-										to={`/${borderCountryCode}`}
+										to={`../${borderCountry.cca3}`}
 										className="border-country"
-										key={borderCountryCode}
-										reloadDocument
+										key={borderCountry.cca3}
 									>
-										{`${borderCountriesData[index][0].flag} ${borderCountriesData[index][0].name.common}`}
+										{`${borderCountry.flag} ${borderCountry.name.common}`}
 									</Link>
 								))
 							)}
@@ -135,11 +118,18 @@ export default function CountryPage() {
 export const countriesLoader = async ({ params }) => {
 	const { countryCode } = params;
 
-	const res = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`);
+	const countryRes = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`);
 
-	if (!res.ok) {
+	if (!countryRes.ok) {
 		throw Error(`Failed to load country data with code: ${countryCode}`);
 	}
+	const countryData = await countryRes.json();
 
-	return res.json();
+	const allCountriesRes = await fetch('https://restcountries.com/v3.1/all');
+	if (!allCountriesRes.ok) {
+		throw Error('Failed to load country data');
+	}
+	const allCountriesData = await allCountriesRes.json();
+
+	return { country: countryData, allCountries: allCountriesData };
 };
