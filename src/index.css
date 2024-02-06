@@ -11,16 +11,16 @@
 
 @layer components {
 	.root-layout header {
-		@apply fixed top-0 mx-auto h-[100px] w-full bg-white dark:bg-dark-blue;
+		@apply fixed top-0 z-50 h-[100px] w-full bg-white dark:bg-dark-blue;
 	}
 
 	.root-layout main {
-		@apply mx-auto mt-[7.75rem] flex max-w-[1300px] flex-col justify-center 3card:max-w-[980px] 2card:max-w-[660px] 1card:max-w-[340px];
+		@apply mt-[7.75rem] flex flex-col items-center justify-center;
 	}
 
 	/* Navbar */
 	.navbar {
-		@apply mx-auto flex h-[100px] w-full max-w-[1260px] items-center justify-between 3card:max-w-[940px];
+		@apply mx-auto flex h-[100px] w-full max-w-[1260px] items-center justify-between 3card:max-w-[940px] 2card:max-w-[620px] 1card:max-w-[300px];
 	}
 
 	.navbar a {
@@ -45,7 +45,7 @@
 		backface-visibility: hidden;
 		content: '';
 		border: 1px solid rgba(255, 255, 255, 0);
-		@apply relative bottom-0 mx-auto my-0 block w-0 transition-all duration-300 ease-in-out;
+		@apply relative bottom-0 my-0 block w-0 transition-all duration-300 ease-in-out;
 	}
 
 	.nav-effect:hover:after,
@@ -63,17 +63,17 @@
 
 	/* HomePage */
 	.home-page {
-		@apply px-5 pb-[70px] text-sm;
+		@apply pb-[70px] text-sm;
 	}
 
 	.country-search-container {
-		@apply mx-auto mb-5 flex justify-between 1card:flex-col 1card:gap-[25px];
+		@apply mx-auto mb-5 flex max-w-[1260px] justify-between 3card:max-w-[940px] 2card:max-w-[620px] 1card:max-w-[335px] 1card:flex-col 1card:gap-[25px];
 	}
 	/* End of HomePage */
 
 	/* SearchBar */
 	.searchbar {
-		@apply standard-text flex h-14 w-96 items-center justify-start rounded-xl border-none bg-white p-8 dark:bg-dark-blue 2card:w-80 1card:m-0 1card:mx-auto 1card:h-16 1card:w-80;
+		@apply standard-text flex h-14 w-96 items-center justify-start rounded-xl border-none bg-white p-8 dark:bg-dark-blue 2card:w-80 1card:m-0 1card:h-16 1card:w-full;
 	}
 
 	.searchbar:focus-visible {
@@ -88,7 +88,7 @@
 
 	/* Dropdown */
 	.filterdropdown {
-		@apply standard-text relative flex h-14 w-48 items-center justify-between rounded-xl bg-white p-8 dark:bg-dark-blue 1card:m-0 1card:mx-auto 1card:h-16 1card:w-80;
+		@apply standard-text relative flex h-14 w-48 items-center justify-between rounded-xl bg-white p-8 dark:bg-dark-blue 1card:m-0 1card:h-16;
 	}
 
 	.dropdown-content {
@@ -102,7 +102,7 @@
 
 	/* CountryCard */
 	.countries-container {
-		@apply mx-auto flex flex-wrap justify-center gap-5;
+		@apply flex max-w-[1260px] flex-wrap justify-center gap-5;
 	}
 
 	.country-card-loading {
@@ -207,7 +207,7 @@
 	}
 
 	.country-page {
-		@apply mt-5 flex justify-between gap-5 2card:flex-col 1card:max-w-[340px] 1card:items-center 1card:justify-center;
+		@apply mt-5 flex justify-between gap-5 2card:flex-col 1card:items-center 1card:justify-center;
 	}
 
 	.country-page-flag {
