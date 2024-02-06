@@ -76,7 +76,7 @@ export default function CountryPage() {
 								{!excludedCountries
 									.find((c) => c.code === country[0].cca3)
 									.excluded.includes('currencies')
-									? ` ${country[0].currencies[Object.keys(country[0].currencies)[0]].name} ( ${country[0].currencies[Object.keys(country[0].currencies)[0]].symbol} )`
+									? ` ${country[0].currencies[Object.keys(country[0].currencies)[0]].name} ${country[0].currencies[Object.keys(country[0].currencies)[0]].symbol ? `(${country[0].currencies[Object.keys(country[0].currencies)[0]].symbol})` : ''}`
 									: ` N/A`}
 							</p>
 							<p className="standard-text">
