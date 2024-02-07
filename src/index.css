@@ -87,16 +87,27 @@
 	/* End of SearchBar */
 
 	/* Dropdown */
-	.filterdropdown {
-		@apply standard-text relative flex h-14 w-48 items-center justify-between rounded-xl bg-white p-8 dark:bg-dark-blue 1card:m-0 1card:h-16;
+	.dropdown {
+		@apply relative;
+	}
+
+	.dropdown-toggle {
+		@apply standard-text flex h-14 w-52 items-center justify-between rounded-xl border border-solid border-transparent bg-white p-8 dark:bg-dark-blue;
+		/* relative */
+		/* w-48 */
+		/* 1card:m-0 */
+		/* 1card:h-16 */
 	}
 
 	.dropdown-content {
-		@apply absolute left-0 top-[60px] z-[1] hidden w-48 rounded-xl border border-solid border-[hsla(0,0%,100%,0.075)] bg-white group-hover:block dark:bg-dark-blue 1card:top-[75px];
+		@apply standard-text absolute left-0 top-[calc(100%+10px)] z-[1] w-52 rounded-xl border border-solid border-[hsla(0,0%,100%,0.075)] bg-white dark:bg-primary-dark-blue;
+		/* hidden */
+		/* group-hover:block  */
+		/* 1card:top-[75px] */
 	}
 
 	.dropdown-link {
-		@apply standard-text block px-[30px] py-[15px] no-underline hover:bg-to-white dark:hover:bg-darker-blue;
+		@apply px-8 py-4 hover:bg-to-white dark:hover:bg-darker-blue;
 	}
 	/* End of Dropdown */
 
