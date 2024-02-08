@@ -125,7 +125,7 @@
 	}
 
 	.country-card:hover {
-		@apply scale-105 transition-all duration-200 ease-in-out;
+		@apply opacity-85 transition-all duration-200 ease-in-out;
 	}
 
 	.flag {
