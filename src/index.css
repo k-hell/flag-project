@@ -211,11 +211,15 @@
 	}
 
 	.country-page {
+		@apply mx-auto w-full max-w-[1260px] 3card:max-w-[940px] 2card:max-w-[620px] 1card:max-w-[300px];
+	}
+
+	.country-page-content {
 		@apply mt-5 flex justify-between gap-5 2card:flex-col 1card:items-center 1card:justify-center;
 	}
 
 	.country-page-flag {
-		@apply aspect-[3/2] h-96 w-[calc(3/2*24rem)] overflow-hidden rounded-xl 3card:h-80 3card:w-[calc(3/2*20rem)] 2card:h-72 2card:w-[calc(3/2*18rem)] 1card:h-56 1card:w-[calc(3/2*14rem)];
+		@apply aspect-[3/2] h-96 max-w-[calc(3/2*24rem)] overflow-hidden rounded-xl 3card:h-72 3card:max-w-[calc(3/2*18rem)] 2card:h-72 2card:max-w-[calc(3/2*18rem)] 1card:h-48 1card:max-w-[calc(3/2*12rem)];
 	}
 
 	.country-page-flag img {
@@ -224,7 +228,7 @@
 	}
 
 	.country-page-container {
-		@apply flex max-w-[42rem] flex-col gap-3 3card:max-w-[28rem] 2card:max-w-96;
+		@apply flex w-[32rem] flex-col justify-center gap-8 3card:w-[28rem] 3card:gap-3 2card:w-full;
 	}
 
 	.country-page-container h1 {
@@ -236,15 +240,15 @@
 	}
 
 	.border-country-container {
-		@apply mt-4 flex flex-wrap items-center gap-2;
+		@apply standard-text flex gap-1 3card:flex-col 3card:gap-3;
 	}
 
 	.border-country-container span {
-		@apply standard-text mr-5;
+		@apply min-w-36 font-semibold;
 	}
 
 	.border-country {
-		@apply inline-block rounded-md bg-white px-5 py-1 text-dark-blue dark:bg-dark-blue dark:text-to-white;
+		@apply inline-block rounded-md bg-white px-5 py-1 dark:bg-dark-blue;
 	}
 
 	.border-country:hover {

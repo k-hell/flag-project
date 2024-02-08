@@ -26,21 +26,21 @@ export default function CountryPage() {
 	}, []);
 
 	return (
-		<>
+		<div className="country-page">
 			<Link
 				className={`back-button back-effect bg-white dark:bg-primary-dark-blue ${themeMode === 'light' ? 'back-btn-dark' : 'back-btn-light'}`}
 				to="/"
 			>
 				<span>Back</span>
 			</Link>
-			<div className="country-page">
+			<div className="country-page-content">
 				<div className="country-page-flag">
 					<img src={country[0].flags.png} alt={country[0].name.common} />
 				</div>
 				<div className="country-page-container">
 					<h1>{country[0].name.common}</h1>
 					<div className="country-page-context-container">
-						<div className="w-full max-w-52">
+						<div className="flex w-full max-w-52 flex-col gap-2">
 							<p className="standard-text">
 								<span className="font-semibold">Population:</span>
 								{` ${country[0].population.toLocaleString()}`}
@@ -64,7 +64,7 @@ export default function CountryPage() {
 									: ` N/A`}
 							</p>
 						</div>
-						<div className="w-full max-w-56">
+						<div className="flex w-full max-w-60 flex-col gap-2">
 							<p className="standard-text">
 								<span className="font-semibold">Top level domain:</span>
 								{!excludedCountries.find((c) => c.code === country[0].cca3).excluded.includes('tld')
@@ -91,19 +91,21 @@ export default function CountryPage() {
 					</div>
 					{Array.isArray(country[0].borders) ? (
 						<div className="border-country-container">
-							<span className="font-semibold">Border countries:</span>
+							<span>Border countries:</span>
 							{loading ? (
 								<p className="border-country">Loading border countries...</p>
 							) : (
-								filteredBorderCountries.map((borderCountry) => (
-									<Link
-										to={`../${borderCountry.cca3}`}
-										className="border-country"
-										key={borderCountry.cca3}
-									>
-										{`${borderCountry.flag} ${borderCountry.name.common}`}
-									</Link>
-								))
+								<div className="flex flex-wrap gap-2">
+									{filteredBorderCountries.map((borderCountry) => (
+										<Link
+											to={`../${borderCountry.cca3}`}
+											className="border-country"
+											key={borderCountry.cca3}
+										>
+											{`${borderCountry.flag} ${borderCountry.name.common}`}
+										</Link>
+									))}
+								</div>
 							)}
 						</div>
 					) : (
@@ -111,7 +113,7 @@ export default function CountryPage() {
 					)}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 
