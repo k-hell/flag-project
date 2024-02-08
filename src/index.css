@@ -15,7 +15,7 @@
 	}
 
 	.root-layout main {
-		@apply mt-[7.75rem] flex flex-col items-center justify-center;
+		@apply mt-[7.75rem] flex flex-col justify-center;
 	}
 
 	/* Navbar */
@@ -73,7 +73,7 @@
 
 	/* SearchBar */
 	.searchbar {
-		@apply standard-text flex h-14 w-96 items-center justify-start rounded-xl border-none bg-white p-8 dark:bg-dark-blue 2card:w-80 1card:m-0 1card:h-16 1card:w-full;
+		@apply standard-text flex h-14 w-96 items-center justify-start rounded-xl border-none bg-white px-8 dark:bg-dark-blue 2card:w-80 1card:m-0 1card:h-16 1card:w-full;
 	}
 
 	.searchbar:focus-visible {
@@ -92,18 +92,11 @@
 	}
 
 	.dropdown-toggle {
-		@apply standard-text flex h-14 w-52 items-center justify-between rounded-xl border border-solid border-transparent bg-white p-8 dark:bg-dark-blue;
-		/* relative */
-		/* w-48 */
-		/* 1card:m-0 */
-		/* 1card:h-16 */
+		@apply standard-text flex h-14 w-48 items-center justify-between rounded-xl border border-solid border-transparent bg-white px-8 dark:bg-dark-blue 1card:h-16;
 	}
 
 	.dropdown-content {
-		@apply standard-text absolute left-0 top-[calc(100%+10px)] z-[1] w-52 rounded-xl border border-solid border-[hsla(0,0%,100%,0.075)] bg-white dark:bg-primary-dark-blue;
-		/* hidden */
-		/* group-hover:block  */
-		/* 1card:top-[75px] */
+		@apply standard-text absolute left-0 top-[calc(100%+10px)] z-[1] w-48 rounded-xl border border-solid border-[hsla(0,0%,100%,0.075)] bg-white dark:bg-primary-dark-blue;
 	}
 
 	.dropdown-link {
@@ -113,7 +106,7 @@
 
 	/* CountryCard */
 	.countries-container {
-		@apply flex max-w-[1260px] flex-wrap justify-center gap-5;
+		@apply mx-auto flex max-w-[1260px] flex-wrap justify-center gap-5;
 	}
 
 	.country-card-loading {
