@@ -7,9 +7,9 @@ export default function CountryPage() {
 	const [loading, setLoading] = useState(true);
 	const { themeMode } = useTheme();
 
-	const filteredBorderCountries = allCountries.filter((borderCountryCode) =>
-		country[0].borders.includes(borderCountryCode.cca3)
-	);
+	const filteredBorderCountries = country[0].borders
+		? allCountries.filter((borderCountryCode) => country[0].borders.includes(borderCountryCode.cca3))
+		: [];
 
 	const excludedCountries = [
 		{ code: 'ATA', excluded: ['nativeName', 'currencies', 'languages'] },
