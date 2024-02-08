@@ -6,7 +6,8 @@ const Dropdown = ({ handleRegionChange }) => {
 	const [showWindow, setShowWindow] = useState(false);
 	const dropdownRef = useRef(null);
 
-	const handleClick = () => {
+	const handleClick = (region) => {
+		handleRegionChange(region);
 		setShowWindow(!showWindow);
 	};
 
@@ -26,7 +27,7 @@ const Dropdown = ({ handleRegionChange }) => {
 
 	return (
 		<div className="dropdown" ref={dropdownRef}>
-			<div className="dropdown-toggle" onClick={handleClick}>
+			<div className="dropdown-toggle" onClick={() => setShowWindow(!showWindow)}>
 				<span>Filter by Region</span>
 				<div>
 					{themeMode === 'light' ? (
@@ -38,22 +39,22 @@ const Dropdown = ({ handleRegionChange }) => {
 			</div>
 			{showWindow && (
 				<div className="dropdown-content">
-					<div className="dropdown-link rounded-t-xl" onClick={() => handleRegionChange(null)}>
+					<div className="dropdown-link rounded-t-xl" onClick={() => handleClick(null)}>
 						All
 					</div>
-					<div className="dropdown-link" onClick={() => handleRegionChange('Americas')}>
+					<div className="dropdown-link" onClick={() => handleClick('Americas')}>
 						Americas
 					</div>
-					<div className="dropdown-link" onClick={() => handleRegionChange('Asia')}>
+					<div className="dropdown-link" onClick={() => handleClick('Asia')}>
 						Asia
 					</div>
-					<div className="dropdown-link" onClick={() => handleRegionChange('Europe')}>
+					<div className="dropdown-link" onClick={() => handleClick('Europe')}>
 						Europe
 					</div>
-					<div className="dropdown-link" onClick={() => handleRegionChange('Africa')}>
+					<div className="dropdown-link" onClick={() => handleClick('Africa')}>
 						Africa
 					</div>
-					<div className="dropdown-link rounded-b-xl" onClick={() => handleRegionChange('Oceania')}>
+					<div className="dropdown-link rounded-b-xl" onClick={() => handleClick('Oceania')}>
 						Oceania
 					</div>
 				</div>
