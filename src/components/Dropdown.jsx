@@ -4,9 +4,11 @@ import useTheme from '../contexts/theme';
 const Dropdown = ({ handleRegionChange }) => {
 	const { themeMode } = useTheme();
 	const [showWindow, setShowWindow] = useState(false);
+	const [selectedRegion, setSelectedRegion] = useState('Filter by Region');
 	const dropdownRef = useRef(null);
 
 	const handleClick = (region) => {
+		setSelectedRegion(region);
 		handleRegionChange(region);
 		setShowWindow(!showWindow);
 	};
@@ -28,7 +30,7 @@ const Dropdown = ({ handleRegionChange }) => {
 	return (
 		<div className="dropdown" ref={dropdownRef}>
 			<div className="dropdown-toggle" onClick={() => setShowWindow(!showWindow)}>
-				<span>Filter by Region</span>
+				<span>{selectedRegion ? selectedRegion : 'Filter by Region'}</span>
 				<div>
 					{themeMode === 'light' ? (
 						<img src="./images/arrow-down-dark.svg" alt="Dropdown Menu" />
