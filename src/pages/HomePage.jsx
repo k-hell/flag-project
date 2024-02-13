@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import CountryCard from '../components/CountryCard';
 import Dropdown from '../components/Dropdown';
 import SearchBar from '../components/SearchBar';
-import { useLoaderData } from 'react-router-dom';
+import useRegionCountries from '../hooks/useRegionCountries';
 
 export default function HomePage() {
-	const allCountries = useLoaderData();
 	const [selectedRegion, setSelectedRegion] = useState(null);
 	const [searchQuery, setSearchQuery] = useState('');
+	const { countries, loading } = useRegionCountries(selectedRegion);
 
 	const handleRegionChange = (region) => {
 		setSelectedRegion(region);
@@ -27,13 +27,19 @@ export default function HomePage() {
 		}
 	};
 
+	const filteredData = countries.filter(filterCountries).sort((a, b) => a.name.common.localeCompare(b.name.common));
+
 	return (
 		<div className="home-page">
 			<div className="country-search-container">
 				<SearchBar value={searchQuery} onChange={handleSearchChange} />
 				<Dropdown handleRegionChange={handleRegionChange} />
 			</div>
-			<CountryCard allCountries={allCountries} selectedRegion={selectedRegion} filterFunction={filterCountries} />
+			<div className="countries-container">
+				{loading
+					? filteredData.map((country) => <div className="country-card-loading" key={country.cca3}></div>)
+					: filteredData.map((country) => <CountryCard country={country} key={country.cca3} />)}
+			</div>
 		</div>
 	);
 }
