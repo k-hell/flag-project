@@ -28,7 +28,7 @@ const CountryCard = ({ allCountries, selectedRegion, filterFunction }) => {
 						<Link to={`${country.cca3}`} key={country.cca3}>
 							<div className="country-card">
 								<div className="flag">
-									<img src={country.flags.png} alt="flag" />
+									<img src={country.flags.svg} alt="flag" />
 								</div>
 								<div className="country-info">
 									<div className="country-name">{country.name.common}</div>

@@ -35,7 +35,7 @@ export default function CountryPage() {
 			</Link>
 			<div className="country-page-content">
 				<div className="country-page-flag">
-					<img src={country[0].flags.png} alt={country[0].name.common} />
+					<img src={country[0].flags.svg} alt={country[0].name.common} />
 				</div>
 				<div className="country-page-container">
 					<h1>{country[0].name.common}</h1>
