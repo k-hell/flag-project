@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const useRegionCountries = (region) => {
+	const allCountries = useLoaderData();
 	const [countries, setCountries] = useState([]);
 	const [loading, setLoading] = useState(true);
 
@@ -8,7 +10,7 @@ const useRegionCountries = (region) => {
 		const fetchCountries = async () => {
 			try {
 				if (region === null) {
-					setCountries([]);
+					setCountries(allCountries);
 					setLoading(false);
 					return;
 				}
