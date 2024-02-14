@@ -42,8 +42,7 @@
 }
 
 .country-page-flag img {
-	width: 100%;
-	height: 100%;
+	@apply h-full w-full object-contain;
 }
 
 .country-page-container {
