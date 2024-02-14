@@ -1,0 +1,15 @@
+.dropdown {
+	@apply relative;
+}
+
+.dropdown-toggle {
+	@apply standard-text flex h-14 w-48 items-center justify-between rounded-xl border border-solid border-transparent bg-white px-8 dark:bg-dark-blue 1card:h-16;
+}
+
+.dropdown-content {
+	@apply standard-text absolute left-0 top-[calc(100%+10px)] z-[1] w-48 rounded-xl border border-solid border-[hsla(0,0%,100%,0.075)] bg-white dark:bg-primary-dark-blue;
+}
+
+.dropdown-link {
+	@apply px-8 py-4 hover:bg-to-white dark:hover:bg-darker-blue;
+}

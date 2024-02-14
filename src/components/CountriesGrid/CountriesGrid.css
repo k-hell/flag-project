@@ -1,0 +1,7 @@
+.countries-container {
+	@apply mx-auto flex max-w-[1260px] flex-wrap justify-center gap-5;
+}
+
+.country-card-loading {
+	@apply h-[310px] w-[300px] rounded-xl bg-white dark:bg-dark-blue 3card:h-[361px];
+}

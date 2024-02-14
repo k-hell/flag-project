@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useTheme from '../contexts/theme';
+import useTheme from '../../contexts/theme';
+import './Navbar.css';
 
 function Navbar() {
 	const { themeMode, lightTheme, darkTheme } = useTheme();

@@ -1,0 +1,7 @@
+.home-page {
+	@apply pb-[70px] text-sm;
+}
+
+.country-search-container {
+	@apply mx-auto mb-5 flex max-w-[1260px] justify-between 3card:max-w-[940px] 2card:max-w-[620px] 1card:max-w-[335px] 1card:flex-col 1card:gap-[25px];
+}

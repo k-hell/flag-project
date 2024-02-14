@@ -1,0 +1,7 @@
+.root-layout header {
+	@apply fixed top-0 z-50 h-[100px] w-full bg-white dark:bg-dark-blue;
+}
+
+.root-layout main {
+	@apply mt-[7.75rem] flex flex-col justify-center;
+}

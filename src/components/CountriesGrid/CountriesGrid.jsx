@@ -1,5 +1,6 @@
 import React from 'react';
-import CountryCard from '../components/CountryCard';
+import CountryCard from './CountryCard/CountryCard';
+import './CountriesGrid.css';
 
 const CountriesGrid = ({ loading, filteredData }) => {
 	return (

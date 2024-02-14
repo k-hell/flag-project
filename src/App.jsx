@@ -1,6 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
-import HomePage, { allCountriesLoader } from './pages/HomePage';
-import CountryPage, { countriesLoader } from './pages/CountryPage';
+import HomePage, { allCountriesLoader } from './pages/HomePage/HomePage';
+import CountryPage, { countriesLoader } from './pages/CountryPage/CountryPage';
 import RootLayout from './layouts/RootLayout';
 import { ThemeProvider } from './contexts/theme';
 import { useEffect, useState } from 'react';

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import CountriesGrid from '../components/CountriesGrid';
-import Dropdown from '../components/Dropdown';
-import SearchBar from '../components/SearchBar';
-import useRegionCountries from '../hooks/useRegionCountries';
+import CountriesGrid from '../../components/CountriesGrid/CountriesGrid';
+import Dropdown from '../../components/Dropdown/Dropdown';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import useRegionCountries from '../../hooks/useRegionCountries';
+import './HomePage.css';
 
 export default function HomePage() {
 	const [selectedRegion, setSelectedRegion] = useState(null);

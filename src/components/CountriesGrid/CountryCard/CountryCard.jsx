@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './CountryCard.css';
 
 const CountryCard = ({ country }) => {
 	const { name, flags, population, region, capital, cca3 } = country;
@@ -11,7 +12,7 @@ const CountryCard = ({ country }) => {
 					<img src={flags.png} alt="flag" />
 				</div>
 				<div className="country-info">
-					<div className="country-name">{name.common}</div>
+					<div className="country-name mb-[5px]">{name.common}</div>
 					<div className="country-population">
 						<span className="population-title">Population:</span>
 						<span className="population-value">{` ${population.toLocaleString()}`}</span>

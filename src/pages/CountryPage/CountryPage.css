@@ -1,0 +1,75 @@
+.back-button {
+	@apply standard-text relative inline-block w-36 overflow-hidden rounded-md py-3 text-center;
+}
+
+.back-button.back-effect {
+	@apply transition-all delay-0 duration-200 ease-linear;
+}
+
+.back-button.back-effect:before {
+	content: '';
+	border-radius: 6px 0px 0px 6px;
+	background-size: 20px;
+	@apply absolute -left-7 top-0 flex h-full w-7 items-center justify-center bg-dark-blue bg-opacity-15 bg-center bg-no-repeat transition-all delay-0 duration-200 ease-linear dark:bg-white dark:bg-opacity-30;
+}
+
+.back-btn-light:before {
+	background-image: url('../images/arrow-left.svg');
+}
+
+.back-btn-dark:before {
+	background-image: url('../images/arrow-left-dark.svg');
+}
+
+.back-button.back-effect:hover {
+	@apply indent-7;
+}
+
+.back-button.back-effect:hover:before {
+	@apply left-0 indent-0;
+}
+
+.country-page {
+	@apply mx-auto w-full max-w-[1260px] 3card:max-w-[940px] 2card:max-w-[620px] 1card:max-w-[300px];
+}
+
+.country-page-content {
+	@apply mt-5 flex justify-between gap-5 2card:flex-col 1card:items-center 1card:justify-center;
+}
+
+.country-page-flag {
+	@apply aspect-[3/2] h-96 max-w-[calc(3/2*24rem)] overflow-hidden rounded-xl 3card:h-72 3card:max-w-[calc(3/2*18rem)] 2card:h-72 2card:max-w-[calc(3/2*18rem)] 1card:h-48 1card:max-w-[calc(3/2*12rem)];
+}
+
+.country-page-flag img {
+	width: 100%;
+	height: 100%;
+}
+
+.country-page-container {
+	@apply flex w-[32rem] flex-col justify-center gap-8 3card:w-[28rem] 3card:gap-3 2card:w-full;
+}
+
+.country-page-container h1 {
+	@apply standard-text text-3xl font-semibold;
+}
+
+.country-page-context-container {
+	@apply flex justify-between gap-6 1card:flex-col 1card:gap-0;
+}
+
+.border-country-container {
+	@apply standard-text flex gap-1 3card:flex-col 3card:gap-3;
+}
+
+.border-country-container span {
+	@apply min-w-36 font-semibold;
+}
+
+.border-country {
+	@apply inline-block rounded-md bg-white px-5 py-1 dark:bg-dark-blue;
+}
+
+.border-country:hover {
+	@apply bg-dark-blue bg-opacity-15 dark:bg-to-white dark:bg-opacity-30;
+}

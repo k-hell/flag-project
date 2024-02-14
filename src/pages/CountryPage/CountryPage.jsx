@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import useTheme from '../contexts/theme';
+import useTheme from '../../contexts/theme';
+import './CountryPage.css';
 
 export default function CountryPage() {
 	const { country, allCountries } = useLoaderData();

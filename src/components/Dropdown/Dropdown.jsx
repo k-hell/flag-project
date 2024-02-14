@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import useTheme from '../contexts/theme';
+import useTheme from '../../contexts/theme';
+import './Dropdown.css';
 
 const Dropdown = ({ handleRegionChange }) => {
 	const { themeMode } = useTheme();
