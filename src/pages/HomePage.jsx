@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CountryCard from '../components/CountryCard';
+import CountriesGrid from '../components/CountriesGrid';
 import Dropdown from '../components/Dropdown';
 import SearchBar from '../components/SearchBar';
 import useRegionCountries from '../hooks/useRegionCountries';
@@ -35,11 +35,7 @@ export default function HomePage() {
 				<SearchBar value={searchQuery} onChange={handleSearchChange} />
 				<Dropdown handleRegionChange={handleRegionChange} />
 			</div>
-			<div className="countries-container">
-				{loading
-					? filteredData.map((country) => <div className="country-card-loading" key={country.cca3}></div>)
-					: filteredData.map((country) => <CountryCard country={country} key={country.cca3} />)}
-			</div>
+			<CountriesGrid loading={loading} filteredData={filteredData} />
 		</div>
 	);
 }
