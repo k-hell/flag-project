@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 @layer base {
-	* {
-		box-sizing: border-box;
-		font-family: 'Open Sans', sans-serif;
-	}
+  * {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
 }
 
 @layer components {
-	.standard-text {
-		@apply text-darker-blue dark:text-to-white;
-	}
+  .standard-text {
+    @apply text-darker-blue dark:text-to-white;
+  }
 }

@@ -1,40 +1,40 @@
 .navbar {
-	@apply mx-auto flex h-[100px] w-full max-w-[1260px] items-center justify-between 3card:max-w-[940px] 2card:max-w-[620px] 1card:max-w-[300px];
+  @apply mx-auto flex h-[100px] w-full max-w-[1260px] items-center justify-between 3card:max-w-[940px] 2card:max-w-[620px] 1card:max-w-[300px];
 }
 
 .navbar a:first-child {
-	@apply max-w-40 font-semibold text-darker-blue dark:text-to-white;
+  @apply max-w-40 font-semibold text-darker-blue dark:text-to-white;
 }
 
 .logo {
-	@apply 1card:hidden;
+  @apply 1card:hidden;
 }
 
 .nav-links {
-	@apply flex justify-center gap-4;
+  @apply flex justify-center gap-4;
 }
 
 .nav-button {
-	@apply relative w-full cursor-pointer text-center leading-10;
+  @apply relative w-full cursor-pointer text-center leading-10;
 }
 
 .nav-effect:after,
 .nav-effect:before {
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	content: '';
-	border: 1px solid rgba(255, 255, 255, 0);
-	@apply relative bottom-0 my-0 block w-0 transition-all duration-300 ease-in-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  content: '';
+  border: 1px solid rgba(255, 255, 255, 0);
+  @apply relative bottom-0 my-0 block w-0 transition-all duration-300 ease-in-out;
 }
 
 .nav-effect:hover:after,
 .nav-effect:hover:before {
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	transition: width 350ms ease-in-out;
-	@apply w-[90%] border-primary-darker-blue dark:border-white;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: width 350ms ease-in-out;
+  @apply w-[90%] border-primary-darker-blue dark:border-white;
 }
 
 .nav-effect:hover:before {
-	@apply bottom-auto top-0 w-[90%];
+  @apply bottom-auto top-0 w-[90%];
 }

@@ -1,38 +1,38 @@
 .country-card {
-	@apply max-w-[300px] overflow-hidden rounded-xl bg-white dark:bg-dark-blue;
+  @apply max-w-[300px] overflow-hidden rounded-xl bg-white dark:bg-dark-blue;
 }
 
 .country-card:hover {
-	@apply opacity-85 transition-all duration-200 ease-in-out;
+  @apply opacity-85 transition-all duration-200 ease-in-out;
 }
 
 .flag {
-	@apply h-[200px];
+  @apply h-[200px];
 }
 
 .flag img {
-	@apply h-full min-h-[200px] w-full min-w-[300px];
+  @apply h-full min-h-[200px] w-full min-w-[300px];
 }
 
 .country-info {
-	@apply py-[15px] pl-[25px];
+  @apply py-[15px] pl-[25px];
 }
 
 .country-name,
 .population-title,
 .region-title,
 .capital-title {
-	@apply standard-text font-semibold;
+  @apply standard-text font-semibold;
 }
 
 .country-population,
 .country-region,
 .country-capital {
-	@apply py-[5px];
+  @apply py-[5px];
 }
 
 .population-value,
 .region-value,
 .capital-value {
-	@apply standard-text;
+  @apply standard-text;
 }

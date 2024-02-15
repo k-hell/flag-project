@@ -10,12 +10,12 @@ Din utmaning är att integrera med [REST-ländernas API](https://restcountries.c
 
 Dina användare ska kunna:
 
--   Se alla länder från API:et på startsidan
--   Söka efter ett land med hjälp av ett input-fält
--   Filtrera länder efter region
--   Klicka på ett land för att se mer detaljerad information på en separat sida
--   Klicka igenom till grannländerna på detaljsidan
--   Växla färgschemat mellan ljus och mörk läge.
+- Se alla länder från API:et på startsidan
+- Söka efter ett land med hjälp av ett input-fält
+- Filtrera länder efter region
+- Klicka på ett land för att se mer detaljerad information på en separat sida
+- Klicka igenom till grannländerna på detaljsidan
+- Växla färgschemat mellan ljus och mörk läge.
 
 **⚠️ OBS ⚠️: Ibland kan REST-ländernas API vara nere. Vi har lagt till en `data.json?`-fil med allt landsdata som du kan använda dig av ist för API:et. Du kan behandla data.json precis som en Endpoint. För att göra api anrop mot den kan du följa denna guide**: https://www.medium.com/frontendweb/how-to-read-local-json-file-in-react-js-564125235fc7
 
