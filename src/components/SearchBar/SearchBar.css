@@ -9,3 +9,11 @@
 .searchbar::placeholder {
   @apply standard-text;
 }
+
+.suggestions-list {
+  @apply standard-text absolute z-10 mt-2 overflow-hidden rounded-xl border border-transparent  bg-white hover:border-primary-dark-blue dark:bg-primary-dark-blue dark:hover:border-to-white;
+}
+
+.suggestions-list li {
+  @apply px-8 py-4 hover:bg-primary-darker-blue;
+}
